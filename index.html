@@ -1,0 +1,2526 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>VI Semester B.Sc Web Technologies - Solved Paper 2025</title>
+<link href="https://cdn.jsdelivr.net/npm/fontsource@latest/index.css" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&family=JetBrains+Mono:wght@400;500;600&family=Playfair+Display:wght@700;800;900&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+        <link href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.19/dist/tailwind.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    
+<style>
+*, *::before, *::after { margin: 0; padding: 0; box-sizing: border-box; }
+
+:root {
+  --primary: #6366f1;
+  --primary-dark: #4f46e5;
+  --primary-light: #a5b4fc;
+  --secondary: #ec4899;
+  --accent: #06b6d4;
+  --bg: #0f172a;
+  --bg-card: #1e293b;
+  --bg-card-hover: #334155;
+  --text: #f1f5f9;
+  --text-muted: #94a3b8;
+  --border: #334155;
+  --success: #10b981;
+  --warning: #f59e0b;
+  --code-bg: #0d1117;
+  --gradient-1: linear-gradient(135deg, #6366f1, #8b5cf6, #a78bfa);
+  --gradient-2: linear-gradient(135deg, #ec4899, #f472b6);
+  --gradient-3: linear-gradient(135deg, #06b6d4, #22d3ee);
+}
+
+html { scroll-behavior: smooth; }
+
+body {
+  font-family: 'Inter', sans-serif;
+  background: var(--bg);
+  color: var(--text);
+  line-height: 1.7;
+  overflow-x: hidden;
+}
+
+/* Animated Background */
+.bg-animation {
+  position: fixed;
+  top: 0; left: 0;
+  width: 100%; height: 100%;
+  z-index: -1;
+  overflow: hidden;
+}
+
+.bg-animation .orb {
+  position: absolute;
+  border-radius: 50%;
+  filter: blur(80px);
+  opacity: 0.15;
+  animation: floatOrb 20s ease-in-out infinite;
+}
+
+.bg-animation .orb:nth-child(1) {
+  width: 600px; height: 600px;
+  background: var(--primary);
+  top: -200px; left: -200px;
+  animation-delay: 0s;
+}
+
+.bg-animation .orb:nth-child(2) {
+  width: 500px; height: 500px;
+  background: var(--secondary);
+  bottom: -150px; right: -150px;
+  animation-delay: -7s;
+}
+
+.bg-animation .orb:nth-child(3) {
+  width: 400px; height: 400px;
+  background: var(--accent);
+  top: 50%; left: 50%;
+  animation-delay: -14s;
+}
+
+@keyframes floatOrb {
+  0%, 100% { transform: translate(0, 0) scale(1); }
+  25% { transform: translate(100px, -50px) scale(1.1); }
+  50% { transform: translate(-50px, 100px) scale(0.9); }
+  75% { transform: translate(80px, 50px) scale(1.05); }
+}
+
+/* Scrollbar */
+::-webkit-scrollbar { width: 8px; }
+::-webkit-scrollbar-track { background: var(--bg); }
+::-webkit-scrollbar-thumb { background: var(--primary); border-radius: 4px; }
+
+/* Navigation */
+.navbar {
+  position: fixed;
+  top: 0; left: 0; right: 0;
+  z-index: 1000;
+  background: rgba(15, 23, 42, 0.85);
+  backdrop-filter: blur(20px);
+  border-bottom: 1px solid var(--border);
+  padding: 0 2rem;
+  transition: all 0.3s ease;
+}
+
+.navbar.scrolled {
+  box-shadow: 0 4px 30px rgba(0,0,0,0.3);
+}
+
+.nav-inner {
+  max-width: 1400px;
+  margin: 0 auto;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  height: 70px;
+}
+
+.nav-logo {
+  font-family: 'Playfair Display', serif;
+  font-size: 1.4rem;
+  font-weight: 800;
+  background: var(--gradient-1);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+}
+
+.nav-links {
+  display: flex;
+  gap: 0.5rem;
+  list-style: none;
+}
+
+.nav-links a {
+  color: var(--text-muted);
+  text-decoration: none;
+  padding: 0.5rem 1rem;
+  border-radius: 8px;
+  font-size: 0.9rem;
+  font-weight: 500;
+  transition: all 0.3s ease;
+}
+
+.nav-links a:hover, .nav-links a.active {
+  color: var(--text);
+  background: rgba(99, 102, 241, 0.15);
+}
+
+.hamburger {
+  display: none;
+  flex-direction: column;
+  gap: 5px;
+  cursor: pointer;
+  background: none;
+  border: none;
+  padding: 5px;
+}
+
+.hamburger span {
+  width: 25px; height: 2px;
+  background: var(--text);
+  transition: all 0.3s ease;
+  border-radius: 2px;
+}
+
+/* Hero Section */
+.hero {
+  min-height: 100vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  padding: 120px 2rem 80px;
+  position: relative;
+}
+
+.hero-content { max-width: 900px; }
+
+.hero-badge {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.5rem;
+  background: rgba(99, 102, 241, 0.15);
+  border: 1px solid rgba(99, 102, 241, 0.3);
+  padding: 0.5rem 1.2rem;
+  border-radius: 50px;
+  font-size: 0.85rem;
+  color: var(--primary-light);
+  margin-bottom: 2rem;
+  animation: fadeInUp 0.8s ease;
+}
+
+.hero-badge .dot {
+  width: 8px; height: 8px;
+  background: var(--success);
+  border-radius: 50%;
+  animation: pulse 2s ease-in-out infinite;
+}
+
+@keyframes pulse {
+  0%, 100% { opacity: 1; transform: scale(1); }
+  50% { opacity: 0.5; transform: scale(1.5); }
+}
+
+.hero h1 {
+  font-family: 'Playfair Display', serif;
+  font-size: clamp(2.5rem, 6vw, 4.5rem);
+  font-weight: 900;
+  line-height: 1.1;
+  margin-bottom: 1.5rem;
+  animation: fadeInUp 0.8s ease 0.2s both;
+}
+
+.hero h1 .gradient-text {
+  background: var(--gradient-1);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+}
+
+.hero-subtitle {
+  font-size: 1.2rem;
+  color: var(--text-muted);
+  max-width: 700px;
+  margin: 0 auto 2.5rem;
+  animation: fadeInUp 0.8s ease 0.4s both;
+}
+
+.hero-stats {
+  display: flex;
+  justify-content: center;
+  gap: 3rem;
+  margin-bottom: 3rem;
+  animation: fadeInUp 0.8s ease 0.6s both;
+}
+
+.hero-stat {
+  text-align: center;
+}
+
+.hero-stat .number {
+  font-size: 2.5rem;
+  font-weight: 800;
+  background: var(--gradient-1);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+}
+
+.hero-stat .label {
+  font-size: 0.85rem;
+  color: var(--text-muted);
+  text-transform: uppercase;
+  letter-spacing: 1px;
+}
+
+.hero-actions {
+  display: flex;
+  gap: 1rem;
+  justify-content: center;
+  flex-wrap: wrap;
+  animation: fadeInUp 0.8s ease 0.8s both;
+}
+
+.btn {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.5rem;
+  padding: 0.9rem 2rem;
+  border-radius: 12px;
+  font-size: 1rem;
+  font-weight: 600;
+  text-decoration: none;
+  cursor: pointer;
+  border: none;
+  transition: all 0.3s ease;
+  font-family: 'Inter', sans-serif;
+}
+
+.btn-primary {
+  background: var(--gradient-1);
+  color: white;
+  box-shadow: 0 4px 20px rgba(99, 102, 241, 0.4);
+}
+
+.btn-primary:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 8px 30px rgba(99, 102, 241, 0.5);
+}
+
+.btn-outline {
+  background: transparent;
+  color: var(--text);
+  border: 1px solid var(--border);
+}
+
+.btn-outline:hover {
+  border-color: var(--primary);
+  background: rgba(99, 102, 241, 0.1);
+}
+
+/* Section Styles */
+.section {
+  padding: 80px 2rem;
+  max-width: 1200px;
+  margin: 0 auto;
+}
+
+.section-header {
+  text-align: center;
+  margin-bottom: 4rem;
+}
+
+.section-tag {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.5rem;
+  font-size: 0.8rem;
+  font-weight: 600;
+  text-transform: uppercase;
+  letter-spacing: 2px;
+  color: var(--primary-light);
+  margin-bottom: 1rem;
+}
+
+.section-tag .line {
+  width: 30px; height: 2px;
+  background: var(--primary);
+}
+
+.section-header h2 {
+  font-family: 'Playfair Display', serif;
+  font-size: clamp(2rem, 4vw, 3rem);
+  font-weight: 800;
+  margin-bottom: 1rem;
+}
+
+.section-header p {
+  color: var(--text-muted);
+  font-size: 1.1rem;
+  max-width: 600px;
+  margin: 0 auto;
+}
+
+/* Exam Info Card */
+.exam-info {
+  background: var(--bg-card);
+  border: 1px solid var(--border);
+  border-radius: 20px;
+  padding: 2.5rem;
+  margin-bottom: 3rem;
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+  gap: 1.5rem;
+}
+
+.exam-info-item {
+  text-align: center;
+  padding: 1rem;
+  border-radius: 12px;
+  background: rgba(99, 102, 241, 0.05);
+  border: 1px solid rgba(99, 102, 241, 0.1);
+}
+
+.exam-info-item .icon {
+  font-size: 1.5rem;
+  margin-bottom: 0.5rem;
+}
+
+.exam-info-item .label {
+  font-size: 0.75rem;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+  color: var(--text-muted);
+  margin-bottom: 0.3rem;
+}
+
+.exam-info-item .value {
+  font-size: 1.1rem;
+  font-weight: 700;
+  color: var(--primary-light);
+}
+
+/* Question Cards */
+.questions-grid {
+  display: flex;
+  flex-direction: column;
+  gap: 1.5rem;
+}
+
+.question-card {
+  background: var(--bg-card);
+  border: 1px solid var(--border);
+  border-radius: 16px;
+  overflow: hidden;
+  transition: all 0.4s ease;
+  animation: fadeInUp 0.6s ease both;
+}
+
+.question-card:hover {
+  border-color: var(--primary);
+  box-shadow: 0 4px 30px rgba(99, 102, 241, 0.15);
+  transform: translateY(-2px);
+}
+
+.question-header {
+  padding: 1.5rem 2rem;
+  display: flex;
+  align-items: flex-start;
+  gap: 1.2rem;
+  cursor: pointer;
+  user-select: none;
+  transition: background 0.3s ease;
+}
+
+.question-header:hover {
+  background: rgba(99, 102, 241, 0.05);
+}
+
+.question-number {
+  flex-shrink: 0;
+  width: 44px; height: 44px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: 12px;
+  font-weight: 800;
+  font-size: 1rem;
+}
+
+.section-a .question-number { background: rgba(99, 102, 241, 0.15); color: var(--primary-light); }
+.section-b .question-number { background: rgba(236, 72, 153, 0.15); color: #f9a8d4; }
+.section-c .question-number { background: rgba(6, 182, 212, 0.15); color: #67e8f9; }
+
+.question-title {
+  flex: 1;
+  font-weight: 600;
+  font-size: 1.05rem;
+  line-height: 1.5;
+  padding-top: 0.3rem;
+}
+
+.question-toggle {
+  flex-shrink: 0;
+  width: 36px; height: 36px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: 10px;
+  background: rgba(255,255,255,0.05);
+  transition: all 0.3s ease;
+  margin-top: 0.3rem;
+}
+
+.question-toggle svg {
+  width: 18px; height: 18px;
+  stroke: var(--text-muted);
+  transition: transform 0.3s ease;
+}
+
+.question-card.open .question-toggle {
+  background: rgba(99, 102, 241, 0.15);
+}
+
+.question-card.open .question-toggle svg {
+  transform: rotate(180deg);
+  stroke: var(--primary-light);
+}
+
+.marks-badge {
+  display: inline-flex;
+  padding: 0.2rem 0.7rem;
+  border-radius: 6px;
+  font-size: 0.75rem;
+  font-weight: 600;
+  background: rgba(245, 158, 11, 0.15);
+  color: var(--warning);
+  margin-top: 0.5rem;
+}
+
+.question-body {
+  max-height: 0;
+  overflow: hidden;
+  transition: max-height 0.5s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.question-card.open .question-body {
+  max-height: 5000px;
+}
+
+.answer-content {
+  padding: 0 2rem 2rem;
+  border-top: 1px solid var(--border);
+}
+
+.answer-content h4 {
+  font-size: 0.85rem;
+  text-transform: uppercase;
+  letter-spacing: 1.5px;
+  color: var(--success);
+  margin: 1.5rem 0 0.8rem;
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+}
+
+.answer-content h4:first-child {
+  margin-top: 0;
+}
+
+.answer-content p {
+  color: var(--text-muted);
+  margin-bottom: 1rem;
+  line-height: 1.8;
+}
+
+.answer-content ul, .answer-content ol {
+  padding-left: 1.5rem;
+  margin-bottom: 1rem;
+}
+
+.answer-content li {
+  color: var(--text-muted);
+  margin-bottom: 0.5rem;
+  line-height: 1.7;
+}
+
+.answer-content li strong {
+  color: var(--text);
+}
+
+.code-block {
+  background: var(--code-bg);
+  border: 1px solid #21262d;
+  border-radius: 12px;
+  padding: 1.5rem;
+  margin: 1rem 0;
+  overflow-x: auto;
+  position: relative;
+}
+
+.code-block code {
+  font-family: 'JetBrains Mono', monospace;
+  font-size: 0.88rem;
+  color: #e6edf3;
+  line-height: 1.7;
+}
+
+.code-label {
+  position: absolute;
+  top: 0.5rem;
+  right: 0.8rem;
+  font-size: 0.7rem;
+  color: #8b949e;
+  background: rgba(255,255,255,0.05);
+  padding: 0.2rem 0.6rem;
+  border-radius: 4px;
+  font-family: 'JetBrains Mono', monospace;
+}
+
+.highlight {
+  background: rgba(99, 102, 241, 0.15);
+  color: var(--primary-light);
+  padding: 0.15rem 0.4rem;
+  border-radius: 4px;
+  font-weight: 500;
+  font-family: 'JetBrains Mono', monospace;
+  font-size: 0.9em;
+}
+
+.info-box {
+  background: rgba(99, 102, 241, 0.08);
+  border-left: 3px solid var(--primary);
+  padding: 1rem 1.2rem;
+  border-radius: 0 8px 8px 0;
+  margin: 1rem 0;
+}
+
+.info-box p {
+  color: var(--primary-light) !important;
+  margin-bottom: 0;
+}
+
+table {
+  width: 100%;
+  border-collapse: collapse;
+  margin: 1rem 0;
+  font-size: 0.9rem;
+}
+
+table th, table td {
+  padding: 0.8rem 1rem;
+  border: 1px solid var(--border);
+  text-align: left;
+}
+
+table th {
+  background: rgba(99, 102, 241, 0.15);
+  color: var(--primary-light);
+  font-weight: 600;
+}
+
+table td {
+  color: var(--text-muted);
+}
+
+table tr:hover td {
+  background: rgba(255,255,255,0.02);
+}
+
+/* Progress indicator */
+.progress-bar {
+  position: fixed;
+  top: 70px;
+  left: 0;
+  height: 3px;
+  background: var(--gradient-1);
+  z-index: 999;
+  transition: width 0.1s linear;
+}
+
+/* Table of Contents */
+.toc {
+  background: var(--bg-card);
+  border: 1px solid var(--border);
+  border-radius: 20px;
+  padding: 2.5rem;
+  margin-bottom: 3rem;
+}
+
+.toc h3 {
+  font-size: 1.3rem;
+  margin-bottom: 1.5rem;
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+}
+
+.toc-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+  gap: 1.5rem;
+}
+
+.toc-section {
+  padding: 1.2rem;
+  border-radius: 12px;
+  background: rgba(255,255,255,0.02);
+  border: 1px solid var(--border);
+}
+
+.toc-section h4 {
+  font-size: 0.9rem;
+  margin-bottom: 0.8rem;
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+}
+
+.toc-section ul {
+  list-style: none;
+  padding: 0;
+}
+
+.toc-section li {
+  padding: 0.4rem 0;
+}
+
+.toc-section a {
+  color: var(--text-muted);
+  text-decoration: none;
+  font-size: 0.85rem;
+  transition: color 0.3s ease;
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+}
+
+.toc-section a:hover {
+  color: var(--primary-light);
+}
+
+.toc-section a::before {
+  content: "→";
+  opacity: 0;
+  transition: all 0.3s ease;
+}
+
+.toc-section a:hover::before {
+  opacity: 1;
+}
+
+/* Footer */
+.footer {
+  background: var(--bg-card);
+  border-top: 1px solid var(--border);
+  padding: 3rem 2rem;
+  text-align: center;
+  margin-top: 4rem;
+}
+
+.footer p {
+  color: var(--text-muted);
+  font-size: 0.9rem;
+}
+
+.footer .heart {
+  color: var(--secondary);
+}
+
+/* Animations */
+@keyframes fadeInUp {
+  from { opacity: 0; transform: translateY(30px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+
+@keyframes shimmer {
+  0% { background-position: -200% 0; }
+  100% { background-position: 200% 0; }
+}
+
+/* Responsive */
+@media (max-width: 768px) {
+  .nav-links { display: none; }
+  .hamburger { display: flex; }
+  .nav-links.open {
+    display: flex;
+    flex-direction: column;
+    position: absolute;
+    top: 70px; left: 0; right: 0;
+    background: rgba(15, 23, 42, 0.98);
+    padding: 1rem;
+    border-bottom: 1px solid var(--border);
+  }
+  .hero-stats { gap: 1.5rem; }
+  .hero-stat .number { font-size: 1.8rem; }
+  .question-header { padding: 1.2rem; }
+  .answer-content { padding: 0 1.2rem 1.5rem; }
+  .section { padding: 60px 1rem; }
+  .exam-info { grid-template-columns: 1fr 1fr; padding: 1.5rem; }
+}
+
+/* Syntax Highlighting Colors */
+.kw { color: #ff7b72; }
+.str { color: #a5d6ff; }
+.tag { color: #7ee787; }
+.attr { color: #d2a8ff; }
+.val { color: #a5d6ff; }
+.cm { color: #8b949e; }
+.prop { color: #79c0ff; }
+.num { color: #79c0ff; }
+.func { color: #d2a8ff; }
+.sel { color: #ffa657; }
+.punc { color: #c9d1d9; }
+
+/* Scroll to top */
+.scroll-top {
+  position: fixed;
+  bottom: 2rem;
+  right: 2rem;
+  width: 48px; height: 48px;
+  border-radius: 14px;
+  background: var(--gradient-1);
+  border: none;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  opacity: 0;
+  visibility: hidden;
+  transition: all 0.3s ease;
+  z-index: 100;
+  box-shadow: 0 4px 20px rgba(99, 102, 241, 0.4);
+}
+
+.scroll-top.visible {
+  opacity: 1;
+  visibility: visible;
+}
+
+.scroll-top:hover {
+  transform: translateY(-3px);
+}
+
+.scroll-top svg {
+  width: 20px; height: 20px;
+  stroke: white;
+}
+
+/* Sub-question styling */
+.sub-questions {
+  margin: 1rem 0;
+}
+
+.sub-q {
+  margin-bottom: 1.2rem;
+  padding: 1rem 1.2rem;
+  background: rgba(255,255,255,0.02);
+  border-radius: 10px;
+  border-left: 3px solid var(--accent);
+}
+
+.sub-q strong {
+  color: var(--accent);
+  display: block;
+  margin-bottom: 0.5rem;
+  font-size: 0.95rem;
+}
+</style>
+</head>
+<body>
+
+<div class="bg-animation">
+  <div class="orb"></div>
+  <div class="orb"></div>
+  <div class="orb"></div>
+</div>
+
+<div class="progress-bar" id="progressBar"></div>
+
+<nav class="navbar" id="navbar">
+  <div class="nav-inner">
+    <div class="nav-logo">WebTech 2025</div>
+    <ul class="nav-links" id="navLinks">
+      <li><a href="#hero" class="active">Home</a></li>
+      <li><a href="#toc">Contents</a></li>
+      <li><a href="#section-a">Section A</a></li>
+      <li><a href="#section-b">Section B</a></li>
+      <li><a href="#section-c">Section C</a></li>
+    </ul>
+    <button class="hamburger" id="hamburger" onclick="toggleMenu()">
+      <span></span><span></span><span></span>
+    </button>
+  </div>
+</nav>
+
+<!-- Hero -->
+<section class="hero" id="hero">
+  <div class="hero-content">
+    <div class="hero-badge">
+      <span class="dot"></span>
+      VI Semester B.Sc. — Computer Science
+    </div>
+    <h1>Web Technologies<br><span class="gradient-text">Solved Paper 2025</span></h1>
+    <p class="hero-subtitle">Complete step-by-step solutions for all sections. Master HTML, CSS, JavaScript, XML and web concepts with detailed explanations and code examples.</p>
+    <div class="hero-stats">
+      <div class="hero-stat">
+        <div class="number">20</div>
+        <div class="label">Questions</div>
+      </div>
+      <div class="hero-stat">
+        <div class="number">60</div>
+        <div class="label">Max Marks</div>
+      </div>
+      <div class="hero-stat">
+        <div class="number">2h</div>
+        <div class="label">Duration</div>
+      </div>
+    </div>
+    <div class="hero-actions">
+      <a href="#section-a" class="btn btn-primary">
+        <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 5v14M5 12h14"/></svg>
+        Start Learning
+      </a>
+      <a href="#toc" class="btn btn-outline">
+        <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M3 6h18M3 12h18M3 18h18"/></svg>
+        Table of Contents
+      </a>
+    </div>
+  </div>
+</section>
+
+<!-- Exam Info -->
+<section class="section" id="exam-info">
+  <div class="section-header">
+    <div class="section-tag"><span class="line"></span> Exam Details <span class="line"></span></div>
+    <h2>Examination Information</h2>
+  </div>
+  <div class="exam-info">
+    <div class="exam-info-item">
+      <div class="icon">🎓</div>
+      <div class="label">Degree</div>
+      <div class="value">B.Sc. (NEP) 6th Sem</div>
+    </div>
+    <div class="exam-info-item">
+      <div class="icon">📅</div>
+      <div class="label">Session</div>
+      <div class="value">May/June 2025</div>
+    </div>
+    <div class="exam-info-item">
+      <div class="icon">📝</div>
+      <div class="label">Paper</div>
+      <div class="value">Paper I (DSC)</div>
+    </div>
+    <div class="exam-info-item">
+      <div class="icon">⏱️</div>
+      <div class="label">Time</div>
+      <div class="value">2 Hours</div>
+    </div>
+    <div class="exam-info-item">
+      <div class="icon">📊</div>
+      <div class="label">Max Marks</div>
+      <div class="value">60 Marks</div>
+    </div>
+  </div>
+</section>
+
+<!-- Table of Contents -->
+<section class="section" id="toc">
+  <div class="toc">
+    <h3>📑 Table of Contents</h3>
+    <div class="toc-grid">
+      <div class="toc-section">
+        <h4>🔵 Section A — Short Answers (2 marks each)</h4>
+        <ul>
+          <li><a href="#q1">Q1 — Expand WWW, URL, MIME, HTTP</a></li>
+          <li><a href="#q2">Q2 — What is Hypertext link?</a></li>
+          <li><a href="#q3">Q3 — Audio & Video embedding in HTML</a></li>
+          <li><a href="#q4">Q4 — XML structure syntax</a></li>
+          <li><a href="#q5">Q5 — Expand & define DTD</a></li>
+          <li><a href="#q6">Q6 — Levels of style sheets</a></li>
+          <li><a href="#q7">Q7 — Features of JavaScript</a></li>
+          <li><a href="#q8">Q8 — Syntactic characteristics of JavaScript</a></li>
+          <li><a href="#q9">Q9 — Event handling & event handler</a></li>
+          <li><a href="#q10">Q10 — onfocus & onerror events</a></li>
+          <li><a href="#q11">Q11 — CSS position property & types</a></li>
+          <li><a href="#q12">Q12 — Mouse click event types</a></li>
+        </ul>
+      </div>
+      <div class="toc-section">
+        <h4>🔴 Section B — Medium Answers (5 marks each)</h4>
+        <ul>
+          <li><a href="#q13">Q13 — Frames in HTML</a></li>
+          <li><a href="#q14">Q14 — Selector forms in CSS</a></li>
+          <li><a href="#q15">Q15 — If-else & Switch in JavaScript</a></li>
+          <li><a href="#q16">Q16 — Events from Button Elements</a></li>
+          <li><a href="#q17">Q17 — Moving elements in JavaScript</a></li>
+        </ul>
+      </div>
+      <div class="toc-section">
+        <h4>🔵 Section C — Long Answers (10 marks each)</h4>
+        <ul>
+          <li><a href="#q18">Q18 — &lt;table&gt; tag with example</a></li>
+          <li><a href="#q19">Q19 — Font/List CSS properties & JS built-in functions</a></li>
+          <li><a href="#q20">Q20 — Navigator object & Drag & Drop</a></li>
+        </ul>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ==================== SECTION A ==================== -->
+<section class="section" id="section-a">
+  <div class="section-header">
+    <div class="section-tag"><span class="line"></span> Section A <span class="line"></span></div>
+    <h2>Short Answer Questions</h2>
+    <p>Answer any <strong>10 questions</strong>. Each question carries <strong>2 marks</strong>. (10 × 2 = 20)</p>
+  </div>
+
+  <div class="questions-grid section-a">
+
+    <!-- Q1 -->
+    <div class="question-card" id="q1">
+      <div class="question-header" onclick="toggleQuestion(this)">
+        <div class="question-number">1</div>
+        <div>
+          <div class="question-title">Expand WWW, URL, MIME and HTTP.</div>
+          <span class="marks-badge">2 Marks</span>
+        </div>
+        <div class="question-toggle">
+          <svg viewBox="0 0 24 24" fill="none" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="6 9 12 15 18 9"/></svg>
+        </div>
+      </div>
+      <div class="question-body">
+        <div class="answer-content">
+          <h4>✅ Detailed Answer</h4>
+          <p>Here are the expansions and definitions of each term:</p>
+          
+          <table>
+            <thead>
+              <tr><th>Abbreviation</th><th>Full Form</th><th>Description</th></tr>
+            </thead>
+            <tbody>
+              <tr>
+                <td><strong>WWW</strong></td>
+                <td>World Wide Web</td>
+                <td>A system of interconnected documents and resources accessed via the Internet using web browsers. Invented by Tim Berners-Lee in 1989, it uses HTML for page structure, URLs for addresses, and HTTP for communication.</td>
+              </tr>
+              <tr>
+                <td><strong>URL</strong></td>
+                <td>Uniform Resource Locator</td>
+                <td>The address used to identify and locate resources on the Internet. Format: <span class="highlight">protocol://domain/path?query</span>. Example: <span class="highlight">https://www.example.com/page.html</span></td>
+              </tr>
+              <tr>
+                <td><strong>MIME</strong></td>
+                <td>Multipurpose Internet Mail Extensions</td>
+                <td>A standard that classifies file types on the Internet. MIME types tell the browser how to handle different file types. Examples: <span class="highlight">text/html</span>, <span class="highlight">image/jpeg</span>, <span class="highlight">application/pdf</span></td>
+              </tr>
+              <tr>
+                <td><strong>HTTP</strong></td>
+                <td>Hypertext Transfer Protocol</td>
+                <td>The protocol used for transferring web pages over the Internet. It is a request-response protocol between client (browser) and server. HTTPS is the secure version with encryption.</td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
+      </div>
+    </div>
+
+    <!-- Q2 -->
+    <div class="question-card" id="q2">
+      <div class="question-header" onclick="toggleQuestion(this)">
+        <div class="question-number">2</div>
+        <div>
+          <div class="question-title">What is Hypertext link?</div>
+          <span class="marks-badge">2 Marks</span>
+        </div>
+        <div class="question-toggle">
+          <svg viewBox="0 0 24 24" fill="none" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="6 9 12 15 18 9"/></svg>
+        </div>
+      </div>
+      <div class="question-body">
+        <div class="answer-content">
+          <h4>✅ Detailed Answer</h4>
+          <p>A <strong>Hypertext Link</strong> (or hyperlink) is a reference or pointer to another document, webpage, image, or resource on the Internet. When a user clicks on a hyperlink, the browser navigates to the linked resource.</p>
+          <p>Key characteristics:</p>
+          <ul>
+            <li>Defined using the <span class="highlight">&lt;a&gt;</span> (anchor) tag in HTML</li>
+            <li>Uses the <span class="highlight">href</span> attribute to specify the destination URL</li>
+            <li>Can link to web pages, files, email addresses, or specific sections within the same page</li>
+            <li>Can be absolute (full URL) or relative (path from current page) links</li>
+          </ul>
+          <div class="code-block">
+            <span class="code-label">HTML</span>
+            <code><span class="tag">&lt;a</span> <span class="attr">href</span>=<span class="val">"https://www.example.com"</span> <span class="attr">target</span>=<span class="val">"_blank"</span><span class="tag">&gt;</span>
+  Click here to visit Example
+<span class="tag">&lt;/a&gt;</span>
+
+<span class="cm">&lt;!-- Link to email --&gt;</span>
+<span class="tag">&lt;a</span> <span class="attr">href</span>=<span class="val">"mailto:info@example.com"</span><span class="tag">&gt;</span>Email Us<span class="tag">&lt;/a&gt;</span></code>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- Q3 -->
+    <div class="question-card" id="q3">
+      <div class="question-header" onclick="toggleQuestion(this)">
+        <div class="question-number">3</div>
+        <div>
+          <div class="question-title">Mention how audio and video can be embedded in HTML.</div>
+          <span class="marks-badge">2 Marks</span>
+        </div>
+        <div class="question-toggle">
+          <svg viewBox="0 0 24 24" fill="none" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="6 9 12 15 18 9"/></svg>
+        </div>
+      </div>
+      <div class="question-body">
+        <div class="answer-content">
+          <h4>✅ Detailed Answer</h4>
+          <p>HTML5 introduced the <span class="highlight">&lt;audio&gt;</span> and <span class="highlight">&lt;video&gt;</span> tags for embedding multimedia content directly into web pages.</p>
+          
+          <h4>Embedding Audio:</h4>
+          <div class="code-block">
+            <span class="code-label">HTML</span>
+            <code><span class="tag">&lt;audio</span> <span class="attr">controls</span> <span class="attr">autoplay</span> <span class="attr">loop</span><span class="tag">&gt;</span>
+  <span class="tag">&lt;source</span> <span class="attr">src</span>=<span class="val">"song.mp3"</span> <span class="attr">type</span>=<span class="val">"audio/mpeg"</span><span class="tag">&gt;</span>
+  <span class="tag">&lt;source</span> <span class="attr">src</span>=<span class="val">"song.ogg"</span> <span class="attr">type</span>=<span class="val">"audio/ogg"</span><span class="tag">&gt;</span>
+  Your browser does not support the audio element.
+<span class="tag">&lt;/audio&gt;</span></code>
+          </div>
+
+          <h4>Embedding Video:</h4>
+          <div class="code-block">
+            <span class="code-label">HTML</span>
+            <code><span class="tag">&lt;video</span> <span class="attr">width</span>=<span class="val">"640"</span> <span class="attr">height</span>=<span class="val">"480"</span> <span class="attr">controls</span> <span class="attr">poster</span>=<span class="val">"thumb.jpg"</span><span class="tag">&gt;</span>
+  <span class="tag">&lt;source</span> <span class="attr">src</span>=<span class="val">"movie.mp4"</span> <span class="attr">type</span>=<span class="val">"video/mp4"</span><span class="tag">&gt;</span>
+  <span class="tag">&lt;source</span> <span class="attr">src</span>=<span class="val">"movie.webm"</span> <span class="attr">type</span>=<span class="val">"video/webm"</span><span class="tag">&gt;</span>
+  Your browser does not support the video element.
+<span class="tag">&lt;/video&gt;</span></code>
+          </div>
+
+          <p><strong>Key attributes:</strong> <span class="highlight">controls</span> (shows play/pause buttons), <span class="highlight">autoplay</span> (auto-plays), <span class="highlight">loop</span> (repeats), <span class="highlight">muted</span> (starts without sound), <span class="highlight">poster</span> (thumbnail for video).</p>
+        </div>
+      </div>
+    </div>
+
+    <!-- Q4 -->
+    <div class="question-card" id="q4">
+      <div class="question-header" onclick="toggleQuestion(this)">
+        <div class="question-number">4</div>
+        <div>
+          <div class="question-title">Give the syntax of XML structure.</div>
+          <span class="marks-badge">2 Marks</span>
+        </div>
+        <div class="question-toggle">
+          <svg viewBox="0 0 24 24" fill="none" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="6 9 12 15 18 9"/></svg>
+        </div>
+      </div>
+      <div class="question-body">
+        <div class="answer-content">
+          <h4>✅ Detailed Answer</h4>
+          <p>XML (eXtensible Markup Language) documents follow a strict structure with the following components:</p>
+
+          <div class="code-block">
+            <span class="code-label">XML</span>
+            <code><span class="cm">&lt;?xml version="1.0" encoding="UTF-8"?&gt;</span>  <span class="cm">&lt;!-- XML Declaration --&gt;</span>
+
+<span class="cm">&lt;!-- Root element (required) --&gt;</span>
+<span class="tag">&lt;rootElement&gt;</span>
+
+  <span class="cm">&lt;!-- Child elements --&gt;</span>
+  <span class="tag">&lt;childElement</span> <span class="attr">attribute</span>=<span class="val">"value"</span><span class="tag">&gt;</span>
+    <span class="tag">&lt;subChild&gt;</span>Text content<span class="tag">&lt;/subChild&gt;</span>
+  <span class="tag">&lt;/childElement&gt;</span>
+
+  <span class="tag">&lt;anotherChild&gt;</span>
+    <span class="tag">&lt;item</span> <span class="attr">id</span>=<span class="val">"1"</span><span class="tag">&gt;</span>First Item<span class="tag">&lt;/item&gt;</span>
+    <span class="tag">&lt;item</span> <span class="attr">id</span>=<span class="val">"2"</span><span class="tag">&gt;</span>Second Item<span class="tag">&lt;/item&gt;</span>
+  <span class="tag">&lt;/anotherChild&gt;</span>
+
+<span class="tag">&lt;/rootElement&gt;</span></code>
+          </div>
+
+          <p><strong>Key rules of XML structure:</strong></p>
+          <ul>
+            <li>Must have exactly <strong>one root element</strong> that wraps all other elements</li>
+            <li>All elements must have <strong>closing tags</strong></li>
+            <li>Elements are <strong>case-sensitive</strong> (<span class="highlight">&lt;Name&gt;</span> ≠ <span class="highlight">&lt;name&gt;</span>)</li>
+            <li>Elements must be <strong>properly nested</strong></li>
+            <li>Attribute values must be enclosed in <strong>quotes</strong></li>
+            <li>Starts with an optional <strong>XML declaration</strong></li>
+          </ul>
+        </div>
+      </div>
+    </div>
+
+    <!-- Q5 -->
+    <div class="question-card" id="q5">
+      <div class="question-header" onclick="toggleQuestion(this)">
+        <div class="question-number">5</div>
+        <div>
+          <div class="question-title">Expand and define DTD.</div>
+          <span class="marks-badge">2 Marks</span>
+        </div>
+        <div class="question-toggle">
+          <svg viewBox="0 0 24 24" fill="none" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="6 9 12 15 18 9"/></svg>
+        </div>
+      </div>
+      <div class="question-body">
+        <div class="answer-content">
+          <h4>✅ Detailed Answer</h4>
+          <p><strong>DTD</strong> stands for <strong>Document Type Definition</strong>.</p>
+          <p>A DTD defines the legal building blocks (elements, attributes, entities, notations) of an XML or HTML document. It specifies the structure, element names, attributes, and the hierarchy of elements allowed in a document.</p>
+          
+          <p><strong>Types of DTD:</strong></p>
+          <ul>
+            <li><strong>Internal DTD:</strong> Defined within the same document</li>
+            <li><strong>External DTD:</strong> Defined in a separate file and referenced</li>
+          </ul>
+
+          <div class="code-block">
+            <span class="code-label">HTML/XML</span>
+            <code><span class="cm">&lt;!-- Internal DTD --&gt;</span>
+<span class="tag">&lt;!DOCTYPE</span> <span class="sel">note</span> <span class="attr">[</span>
+  <span class="tag">&lt;!ELEMENT</span> <span class="sel">note</span> <span class="attr">(to,from,heading,body)&gt;</span>
+  <span class="tag">&lt;!ELEMENT</span> <span class="sel">to</span> <span class="attr">(#PCDATA)&gt;</span>
+  <span class="tag">&lt;!ELEMENT</span> <span class="sel">from</span> <span class="attr">(#PCDATA)&gt;</span>
+  <span class="tag">&lt;!ELEMENT</span> <span class="sel">heading</span> <span class="attr">(#PCDATA)&gt;</span>
+  <span class="tag">&lt;!ELEMENT</span> <span class="sel">body</span> <span class="attr">(#PCDATA)&gt;</span>
+<span class="attr">]&gt;</span></code>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- Q6 -->
+    <div class="question-card" id="q6">
+      <div class="question-header" onclick="toggleQuestion(this)">
+        <div class="question-number">6</div>
+        <div>
+          <div class="question-title">What are the levels of style sheets?</div>
+          <span class="marks-badge">2 Marks</span>
+        </div>
+        <div class="question-toggle">
+          <svg viewBox="0 0 24 24" fill="none" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="6 9 12 15 18 9"/></svg>
+        </div>
+      </div>
+      <div class="question-body">
+        <div class="answer-content">
+          <h4>✅ Detailed Answer</h4>
+          <p>There are <strong>three levels</strong> (or types) of CSS style sheets:</p>
+
+          <table>
+            <thead>
+              <tr><th>Type</th><th>Scope</th><th>Priority</th></tr>
+            </thead>
+            <tbody>
+              <tr>
+                <td><strong>Inline Style Sheet</strong></td>
+                <td>Applied to a single element using the <span class="highlight">style</span> attribute</td>
+                <td>Highest (1000)</td>
+              </tr>
+              <tr>
+                <td><strong>Internal (Embedded) Style Sheet</strong></td>
+                <td>Defined in <span class="highlight">&lt;style&gt;</span> tag within <span class="highlight">&lt;head&gt;</span> of the HTML document</td>
+                <td>Medium</td>
+              </tr>
+              <tr>
+                <td><strong>External Style Sheet</strong></td>
+                <td>Written in a separate <span class="highlight">.css</span> file and linked using <span class="highlight">&lt;link&gt;</span> tag</td>
+                <td>Lowest (but reusable)</td>
+              </tr>
+            </tbody>
+          </table>
+
+          <div class="info-box">
+            <p><strong>Priority Order:</strong> Inline &gt; Internal &gt; External. If the same property is defined in multiple levels, the higher priority style overrides the lower one.</p>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- Q7 -->
+    <div class="question-card" id="q7">
+      <div class="question-header" onclick="toggleQuestion(this)">
+        <div class="question-number">7</div>
+        <div>
+          <div class="question-title">List any four features of JavaScript.</div>
+          <span class="marks-badge">2 Marks</span>
+        </div>
+        <div class="question-toggle">
+          <svg viewBox="0 0 24 24" fill="none" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="6 9 12 15 18 9"/></svg>
+        </div>
+      </div>
+      <div class="question-body">
+        <div class="answer-content">
+          <h4>✅ Detailed Answer</h4>
+          <p>Key features of JavaScript include:</p>
+          <ol>
+            <li><strong>Interpreted Language:</strong> JavaScript is interpreted (not compiled), meaning it executes line by line directly in the browser without a compilation step, making it fast to test and deploy.</li>
+            <li><strong>Client-Side Execution:</strong> JavaScript runs in the user's browser, enabling dynamic interactions, form validation, and DOM manipulation without server round-trips.</li>
+            <li><strong>Dynamic Typing:</strong> Variables do not need explicit type declarations. The type is determined at runtime, allowing flexible data manipulation.</li>
+            <li><strong>Event-Driven Programming:</strong> JavaScript supports event handling, allowing code to respond to user actions like clicks, key presses, mouse movements, and page loads.</li>
+            <li><strong>Object-Oriented:</strong> JavaScript supports object-oriented programming with prototypes, classes, inheritance, and encapsulation.</li>
+            <li><strong>Cross-Platform:</strong> Works across all major browsers and operating systems (Windows, macOS, Linux, mobile).</li>
+          </ol>
+        </div>
+      </div>
+    </div>
+
+    <!-- Q8 -->
+    <div class="question-card" id="q8">
+      <div class="question-header" onclick="toggleQuestion(this)">
+        <div class="question-number">8</div>
+        <div>
+          <div class="question-title">What are general syntactic characteristics of JavaScript?</div>
+          <span class="marks-badge">2 Marks</span>
+        </div>
+        <div class="question-toggle">
+          <svg viewBox="0 0 24 24" fill="none" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="6 9 12 15 18 9"/></svg>
+        </div>
+      </div>
+      <div class="question-body">
+        <div class="answer-content">
+          <h4>✅ Detailed Answer</h4>
+          <p>General syntactic characteristics of JavaScript:</p>
+          <ul>
+            <li><strong>Case-Sensitive:</strong> Variables, functions, and keywords are case-sensitive (<span class="highlight">myVar</span> ≠ <span class="highlight">myvar</span>)</li>
+            <li><strong>Statements end with semicolons (;)</strong> — though JavaScript has Automatic Semicolon Insertion (ASI), it is recommended to use them</li>
+            <li><strong>Variables</strong> are declared using <span class="highlight">var</span>, <span class="highlight">let</span>, or <span class="highlight">const</span></li>
+            <li><strong>Blocks</strong> are defined using curly braces <span class="highlight">{ }</span></li>
+            <li><strong>Comments:</strong> Single-line with <span class="highlight">//</span> and multi-line with <span class="highlight">/* */</span></li>
+            <li><strong>Whitespace is ignored</strong> — spaces, tabs, and newlines do not affect execution</li>
+            <li><strong>Loose typing</strong> — the same variable can hold different data types at different times</li>
+          </ul>
+          <div class="code-block">
+            <span class="code-label">JavaScript</span>
+            <code><span class="cm">// Variable declaration</span>
+<span class="kw">let</span> name = <span class="str">"John"</span>;       <span class="cm">// String</span>
+<span class="kw">let</span> age = <span class="num">25</span>;              <span class="cm">// Number</span>
+<span class="kw">const</span> PI = <span class="num">3.14</span>;          <span class="cm">// Constant</span>
+
+<span class="cm">// Function declaration</span>
+<span class="kw">function</span> <span class="func">greet</span>(name) {
+  <span class="kw">return</span> <span class="str">"Hello, "</span> + name;
+}</code>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- Q9 -->
+    <div class="question-card" id="q9">
+      <div class="question-header" onclick="toggleQuestion(this)">
+        <div class="question-number">9</div>
+        <div>
+          <div class="question-title">Define event handling and event handler.</div>
+          <span class="marks-badge">2 Marks</span>
+        </div>
+        <div class="question-toggle">
+          <svg viewBox="0 0 24 24" fill="none" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="6 9 12 15 18 9"/></svg>
+        </div>
+      </div>
+      <div class="question-body">
+        <div class="answer-content">
+          <h4>✅ Detailed Answer</h4>
+          <p><strong>Event Handling</strong> is the mechanism in JavaScript that allows a program to detect and respond to user actions or system events (like clicks, key presses, page loads, etc.).</p>
+          <p><strong>Event Handler</strong> is a function (or method) that is called when a specific event occurs. It contains the code that defines what should happen when the event is triggered.</p>
+          
+          <p>There are three ways to register event handlers:</p>
+          <ol>
+            <li><strong>HTML event attributes:</strong> <span class="highlight">onclick="myFunction()"</span></li>
+            <li><strong>DOM property:</strong> <span class="highlight">element.onclick = myFunction</span></li>
+            <li><strong>addEventListener method:</strong> <span class="highlight">element.addEventListener('click', myFunction)</span></li>
+          </ol>
+
+          <div class="code-block">
+            <span class="code-label">JavaScript</span>
+            <code><span class="cm">// Using addEventListener (recommended)</span>
+<span class="kw">const</span> btn = document.<span class="func">getElementById</span>(<span class="str">"myBtn"</span>);
+btn.<span class="func">addEventListener</span>(<span class="str">"click"</span>, <span class="kw">function</span>() {
+  <span class="func">alert</span>(<span class="str">"Button was clicked!"</span>);
+});</code>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- Q10 -->
+    <div class="question-card" id="q10">
+      <div class="question-header" onclick="toggleQuestion(this)">
+        <div class="question-number">10</div>
+        <div>
+          <div class="question-title">Define onfocus and onerror event.</div>
+          <span class="marks-badge">2 Marks</span>
+        </div>
+        <div class="question-toggle">
+          <svg viewBox="0 0 24 24" fill="none" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="6 9 12 15 18 9"/></svg>
+        </div>
+      </div>
+      <div class="question-body">
+        <div class="answer-content">
+          <h4>✅ Detailed Answer</h4>
+          
+          <p><strong>onfocus Event:</strong> This event is triggered when an element <em>receives focus</em> — typically when a user clicks on a text input field, textarea, or selects it using the Tab key. It is commonly used to highlight the active field or display helpful hints.</p>
+
+          <div class="code-block">
+            <span class="code-label">HTML + JS</span>
+            <code><span class="tag">&lt;input</span> <span class="attr">type</span>=<span class="val">"text"</span> <span class="attr">id</span>=<span class="val">"name"</span> <span class="attr">onfocus</span>=<span class="val">"this.style.background='yellow'"</span><span class="tag">&gt;</span></code>
+          </div>
+
+          <p><strong>onerror Event:</strong> This event is triggered when an <em>error occurs</em> while loading an external resource such as an image, script, or stylesheet. It is commonly used to handle broken images or provide fallback content.</p>
+
+          <div class="code-block">
+            <span class="code-label">HTML + JS</span>
+            <code><span class="tag">&lt;img</span> <span class="attr">src</span>=<span class="val">"broken.jpg"</span> <span class="attr">onerror</span>=<span class="val">"this.src='fallback.jpg'"</span><span class="tag">&gt;</span>
+
+<span class="cm">&lt;!-- For scripts --&gt;</span>
+<span class="tag">&lt;script</span> <span class="attr">src</span>=<span class="val">"missing.js"</span> <span class="attr">onerror</span>=<span class="val">"alert('Script failed to load!')"</span><span class="tag">&gt;</span><span class="tag">&lt;/script&gt;</span></code>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- Q11 -->
+    <div class="question-card" id="q11">
+      <div class="question-header" onclick="toggleQuestion(this)">
+        <div class="question-number">11</div>
+        <div>
+          <div class="question-title">State the position property and its types in CSS w.r.t. HTML.</div>
+          <span class="marks-badge">2 Marks</span>
+        </div>
+        <div class="question-toggle">
+          <svg viewBox="0 0 24 24" fill="none" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="6 9 12 15 18 9"/></svg>
+        </div>
+      </div>
+      <div class="question-body">
+        <div class="answer-content">
+          <h4>✅ Detailed Answer</h4>
+          <p>The CSS <span class="highlight">position</span> property defines how an element is positioned in a document. There are <strong>five values</strong>:</p>
+
+          <table>
+            <thead>
+              <tr><th>Value</th><th>Description</th><th>Uses top/right/bottom/left?</th></tr>
+            </thead>
+            <tbody>
+              <tr>
+                <td><strong>static</strong></td>
+                <td>Default value. Elements are positioned according to normal document flow. Offset properties have no effect.</td>
+                <td>No</td>
+              </tr>
+              <tr>
+                <td><strong>relative</strong></td>
+                <td>Element is positioned relative to its normal position. The space it occupies is preserved.</td>
+                <td>Yes</td>
+              </tr>
+              <tr>
+                <td><strong>absolute</strong></td>
+                <td>Element is positioned relative to its nearest positioned ancestor (or body if none). Removed from normal flow.</td>
+                <td>Yes</td>
+              </tr>
+              <tr>
+                <td><strong>fixed</strong></td>
+                <td>Element is positioned relative to the viewport. Stays in place even when the page scrolls.</td>
+                <td>Yes</td>
+              </tr>
+              <tr>
+                <td><strong>sticky</strong></td>
+                <td>Hybrid of relative and fixed. Acts as relative until it reaches a threshold, then becomes fixed.</td>
+                <td>Yes</td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
+      </div>
+    </div>
+
+    <!-- Q12 -->
+    <div class="question-card" id="q12">
+      <div class="question-header" onclick="toggleQuestion(this)">
+        <div class="question-number">12</div>
+        <div>
+          <div class="question-title">List the event types related to reacting to mouse click.</div>
+          <span class="marks-badge">2 Marks</span>
+        </div>
+        <div class="question-toggle">
+          <svg viewBox="0 0 24 24" fill="none" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="6 9 12 15 18 9"/></svg>
+        </div>
+      </div>
+      <div class="question-body">
+        <div class="answer-content">
+          <h4>✅ Detailed Answer</h4>
+          <p>The main mouse click-related event types in JavaScript are:</p>
+          <ol>
+            <li><strong>click</strong> — Triggered when the mouse button is pressed and released on an element</li>
+            <li><strong>dblclick</strong> — Triggered when the mouse button is double-clicked on an element</li>
+            <li><strong>mousedown</strong> — Triggered when the mouse button is pressed down on an element</li>
+            <li><strong>mouseup</strong> — Triggered when the mouse button is released over an element</li>
+            <li><strong>contextmenu</strong> — Triggered when the right mouse button is clicked (context menu)</li>
+          </ol>
+          <div class="info-box">
+            <p><strong>Order of events:</strong> mousedown → mouseup → click → dblclick (if double-clicked)</p>
+          </div>
+        </div>
+      </div>
+    </div>
+
+  </div>
+</section>
+
+<!-- ==================== SECTION B ==================== -->
+<section class="section" id="section-b">
+  <div class="section-header">
+    <div class="section-tag"><span class="line"></span> Section B <span class="line"></span></div>
+    <h2>Medium Answer Questions</h2>
+    <p>Answer any <strong>4 questions</strong>. Each question carries <strong>5 marks</strong>. (4 × 5 = 20)</p>
+  </div>
+
+  <div class="questions-grid section-b">
+
+    <!-- Q13 -->
+    <div class="question-card" id="q13">
+      <div class="question-header" onclick="toggleQuestion(this)">
+        <div class="question-number">13</div>
+        <div>
+          <div class="question-title">Explain frames in HTML.</div>
+          <span class="marks-badge">5 Marks</span>
+        </div>
+        <div class="question-toggle">
+          <svg viewBox="0 0 24 24" fill="none" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="6 9 12 15 18 9"/></svg>
+        </div>
+      </div>
+      <div class="question-body">
+        <div class="answer-content">
+          <h4>✅ Detailed Answer</h4>
+          <p><strong>Frames in HTML</strong> allow a web page to be divided into multiple independent sections, where each section (frame) can load and display a different HTML document. Frames were commonly used before CSS layouts became popular.</p>
+
+          <h4>Types of Frames:</h4>
+          
+          <p><strong>1. Frameset (Horizontal/Vertical Splitting):</strong></p>
+          <div class="code-block">
+            <span class="code-label">HTML</span>
+            <code><span class="tag">&lt;frameset</span> <span class="attr">rows</span>=<span class="val">"25%,75%"</span><span class="tag">&gt;</span>
+  <span class="tag">&lt;frame</span> <span class="attr">src</span>=<span class="val">"header.html"</span> <span class="attr">name</span>=<span class="val">"topFrame"</span><span class="tag">&gt;</span>
+  <span class="tag">&lt;frameset</span> <span class="attr">cols</span>=<span class="val">"20%,80%"</span><span class="tag">&gt;</span>
+    <span class="tag">&lt;frame</span> <span class="attr">src</span>=<span class="val">"menu.html"</span> <span class="attr">name</span>=<span class="val">"menuFrame"</span><span class="tag">&gt;</span>
+    <span class="tag">&lt;frame</span> <span class="attr">src</span>=<span class="val">"content.html"</span> <span class="attr">name</span>=<span class="val">"contentFrame"</span><span class="tag">&gt;</span>
+  <span class="tag">&lt;/frameset&gt;</span>
+<span class="tag">&lt;/frameset&gt;</span></code>
+          </div>
+
+          <p><strong>2. Inline Frame (iframe):</strong></p>
+          <div class="code-block">
+            <span class="code-label">HTML</span>
+            <code><span class="tag">&lt;iframe</span> <span class="attr">src</span>=<span class="val">"https://www.example.com"</span> 
+        <span class="attr">width</span>=<span class="val">"600"</span> <span class="attr">height</span>=<span class="val">"400"</span> 
+        <span class="attr">name</span>=<span class="val">"myFrame"</span>
+        <span class="attr">frameborder</span>=<span class="val">"1"</span>
+        <span class="attr">scrolling</span>=<span class="val">"auto"</span><span class="tag">&gt;</span>
+  Your browser does not support iframes.
+<span class="tag">&lt;/iframe&gt;</span></code>
+          </div>
+
+          <p><strong>Key Attributes of &lt;frame&gt; tag:</strong></p>
+          <ul>
+            <li><span class="highlight">src</span> — URL of the document to display in the frame</li>
+            <li><span class="highlight">name</span> — Name of the frame (used as target for links)</li>
+            <li><span class="highlight">frameborder</span> — Shows or hides frame borders (1 or 0)</li>
+            <li><span class="highlight">scrolling</span> — Controls scrollbars (yes, no, auto)</li>
+            <li><span class="highlight">noresize</span> — Prevents the frame from being resized</li>
+          </ul>
+
+          <div class="info-box">
+            <p><strong>Note:</strong> The <span class="highlight">&lt;frameset&gt;</span> and <span class="highlight">&lt;frame&gt;</span> tags are <strong>obsolete in HTML5</strong>. Modern web development uses CSS layouts (Flexbox, Grid) and <span class="highlight">&lt;iframe&gt;</span> instead.</p>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- Q14 -->
+    <div class="question-card" id="q14">
+      <div class="question-header" onclick="toggleQuestion(this)">
+        <div class="question-number">14</div>
+        <div>
+          <div class="question-title">Explain different selector forms in CSS.</div>
+          <span class="marks-badge">5 Marks</span>
+        </div>
+        <div class="question-toggle">
+          <svg viewBox="0 0 24 24" fill="none" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="6 9 12 15 18 9"/></svg>
+        </div>
+      </div>
+      <div class="question-body">
+        <div class="answer-content">
+          <h4>✅ Detailed Answer</h4>
+          <p>CSS selectors are patterns used to select and style HTML elements. Here are the different types of CSS selectors:</p>
+
+          <table>
+            <thead>
+              <tr><th>Selector</th><th>Example</th><th>Description</th></tr>
+            </thead>
+            <tbody>
+              <tr>
+                <td><strong>Universal</strong></td>
+                <td><span class="highlight">*</span></td>
+                <td>Selects all elements on the page</td>
+              </tr>
+              <tr>
+                <td><strong>Element/Type</strong></td>
+                <td><span class="highlight">p</span>, <span class="highlight">div</span>, <span class="highlight">h1</span></td>
+                <td>Selects all elements of the specified type</td>
+              </tr>
+              <tr>
+                <td><strong>ID</strong></td>
+                <td><span class="highlight">#header</span></td>
+                <td>Selects element with specific id attribute</td>
+              </tr>
+              <tr>
+                <td><strong>Class</strong></td>
+                <td><span class="highlight">.btn</span>, <span class="highlight">.card</span></td>
+                <td>Selects all elements with the specified class</td>
+              </tr>
+              <tr>
+                <td><strong>Descendant</strong></td>
+                <td><span class="highlight">div p</span></td>
+                <td>Selects all &lt;p&gt; elements inside &lt;div&gt;</td>
+              </tr>
+              <tr>
+                <td><strong>Child</strong></td>
+                <td><span class="highlight">div > p</span></td>
+                <td>Selects direct child &lt;p&gt; elements of &lt;div&gt;</td>
+              </tr>
+              <tr>
+                <td><strong>Adjacent Sibling</strong></td>
+                <td><span class="highlight">h2 + p</span></td>
+                <td>Selects first &lt;p&gt; immediately after &lt;h2&gt;</td>
+              </tr>
+              <tr>
+                <td><strong>General Sibling</strong></td>
+                <td><span class="highlight">h2 ~ p</span></td>
+                <td>Selects all &lt;p&gt; siblings after &lt;h2&gt;</td>
+              </tr>
+              <tr>
+                <td><strong>Attribute</strong></td>
+                <td><span class="highlight">[type="text"]</span></td>
+                <td>Selects elements with matching attribute</td>
+              </tr>
+              <tr>
+                <td><strong>Pseudo-class</strong></td>
+                <td><span class="highlight">:hover</span>, <span class="highlight">:first-child</span></td>
+                <td>Selects elements in specific states</td>
+              </tr>
+              <tr>
+                <td><strong>Pseudo-element</strong></td>
+                <td><span class="highlight">::before</span>, <span class="highlight">::after</span></td>
+                <td>Selects specific parts of an element</td>
+              </tr>
+              <tr>
+                <td><strong>Grouping</strong></td>
+                <td><span class="highlight">h1, h2, h3</span></td>
+                <td>Selects multiple elements with same styles</td>
+              </tr>
+            </tbody>
+          </table>
+
+          <div class="code-block">
+            <span class="code-label">CSS</span>
+            <code><span class="cm">/* Universal selector */</span>
+<span class="sel">*</span> { <span class="prop">margin</span>: <span class="num">0</span>; <span class="prop">padding</span>: <span class="num">0</span>; }
+
+<span class="cm">/* Class selector */</span>
+<span class="sel">.highlight</span> { <span class="prop">background</span>: <span class="val">yellow</span>; }
+
+<span class="cm">/* ID selector */</span>
+<span class="sel">#navbar</span> { <span class="prop">position</span>: <span class="val">fixed</span>; }
+
+<span class="cm">/* Pseudo-class */</span>
+<span class="sel">a:hover</span> { <span class="prop">color</span>: <span class="val">red</span>; }
+
+<span class="cm">/* Attribute selector */</span>
+<span class="sel">input[type="email"]</span> { <span class="prop">border</span>: <span class="num">1px</span> <span class="val">solid</span> <span class="val">blue</span>; }</code>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- Q15 -->
+    <div class="question-card" id="q15">
+      <div class="question-header" onclick="toggleQuestion(this)">
+        <div class="question-number">15</div>
+        <div>
+          <div class="question-title">Discuss 'If-else' and 'Switch' statements in JavaScript.</div>
+          <span class="marks-badge">5 Marks</span>
+        </div>
+        <div class="question-toggle">
+          <svg viewBox="0 0 24 24" fill="none" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="6 9 12 15 18 9"/></svg>
+        </div>
+      </div>
+      <div class="question-body">
+        <div class="answer-content">
+          <h4>✅ Detailed Answer</h4>
+          
+          <h4>1. If-Else Statement:</h4>
+          <p>The <span class="highlight">if-else</span> statement executes a block of code if a specified condition is true, and another block if the condition is false. It supports multiple conditions using <span class="highlight">else if</span>.</p>
+
+          <div class="code-block">
+            <span class="code-label">JavaScript</span>
+            <code><span class="kw">let</span> marks = <span class="num">75</span>;
+
+<span class="kw">if</span> (marks >= <span class="num">90</span>) {
+  document.<span class="func">write</span>(<span class="str">"Grade: A"</span>);
+} <span class="kw">else if</span> (marks >= <span class="num">70</span>) {
+  document.<span class="func">write</span>(<span class="str">"Grade: B"</span>);
+} <span class="kw">else if</span> (marks >= <span class="num">50</span>) {
+  document.<span class="func">write</span>(<span class="str">"Grade: C"</span>);
+} <span class="kw">else</span> {
+  document.<span class="func">write</span>(<span class="str">"Grade: F (Fail)"</span>);
+}</code>
+          </div>
+
+          <h4>2. Switch Statement:</h4>
+          <p>The <span class="highlight">switch</span> statement evaluates an expression and matches its value to a <span class="highlight">case</span> clause. It executes the statements associated with that case. The <span class="highlight">break</span> statement prevents fall-through to the next case.</p>
+
+          <div class="code-block">
+            <span class="code-label">JavaScript</span>
+            <code><span class="kw">let</span> day = <span class="str">"Monday"</span>;
+
+<span class="kw">switch</span> (day) {
+  <span class="kw">case</span> <span class="str">"Monday"</span>:
+    document.<span class="func">write</span>(<span class="str">"Start of the week"</span>);
+    <span class="kw">break</span>;
+  <span class="kw">case</span> <span class="str">"Friday"</span>:
+    document.<span class="func">write</span>(<span class="str">"Almost weekend!"</span>);
+    <span class="kw">break</span>;
+  <span class="kw">case</span> <span class="str">"Saturday"</span>:
+  <span class="kw">case</span> <span class="str">"Sunday"</span>:
+    document.<span class="func">write</span>(<span class="str">"Weekend!"</span>);
+    <span class="kw">break</span>;
+  <span class="kw">default</span>:
+    document.<span class="func">write</span>(<span class="str">"Weekday"</span>);
+}</code>
+          </div>
+
+          <h4>Comparison:</h4>
+          <table>
+            <thead>
+              <tr><th>Feature</th><th>If-Else</th><th>Switch</th></tr>
+            </thead>
+            <tbody>
+              <tr><td>Condition Type</td><td>Boolean expressions</td><td>Equality comparison</td></tr>
+              <tr><td>Best For</td><td>Complex conditions, ranges</td><td>Multiple discrete values</td></tr>
+              <tr><td>Performance</td><td>Evaluates each condition</td><td>Often faster for many cases</td></tr>
+              <tr><td>Default</td><td><span class="highlight">else</span></td><td><span class="highlight">default</span></td></tr>
+            </tbody>
+          </table>
+        </div>
+      </div>
+    </div>
+
+    <!-- Q16 -->
+    <div class="question-card" id="q16">
+      <div class="question-header" onclick="toggleQuestion(this)">
+        <div class="question-number">16</div>
+        <div>
+          <div class="question-title">Explain how events are handled from Button Elements.</div>
+          <span class="marks-badge">5 Marks</span>
+        </div>
+        <div class="question-toggle">
+          <svg viewBox="0 0 24 24" fill="none" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="6 9 12 15 18 9"/></svg>
+        </div>
+      </div>
+      <div class="question-body">
+        <div class="answer-content">
+          <h4>✅ Detailed Answer</h4>
+          <p>Buttons in HTML can trigger various events. There are three main approaches to handle events from button elements:</p>
+
+          <h4>Method 1: HTML Event Attribute (Inline)</h4>
+          <div class="code-block">
+            <span class="code-label">HTML</span>
+            <code><span class="tag">&lt;button</span> <span class="attr">onclick</span>=<span class="val">"showAlert()"</span><span class="tag">&gt;</span>Click Me<span class="tag">&lt;/button&gt;</span>
+
+<span class="tag">&lt;script&gt;</span>
+<span class="kw">function</span> <span class="func">showAlert</span>() {
+  <span class="func">alert</span>(<span class="str">"Button clicked!"</span>);
+}
+<span class="tag">&lt;/script&gt;</span></code>
+          </div>
+
+          <h4>Method 2: DOM Property</h4>
+          <div class="code-block">
+            <span class="code-label">JavaScript</span>
+            <code><span class="tag">&lt;button</span> <span class="attr">id</span>=<span class="val">"myBtn"</span><span class="tag">&gt;</span>Click Me<span class="tag">&lt;/button&gt;</span>
+
+<span class="tag">&lt;script&gt;</span>
+<span class="kw">const</span> btn = document.<span class="func">getElementById</span>(<span class="str">"myBtn"</span>);
+btn.<span class="prop">onclick</span> = <span class="kw">function</span>() {
+  <span class="func">alert</span>(<span class="str">"Button clicked via DOM property!"</span>);
+};
+<span class="tag">&lt;/script&gt;</span></code>
+          </div>
+
+          <h4>Method 3: addEventListener (Recommended)</h4>
+          <div class="code-block">
+            <span class="code-label">JavaScript</span>
+            <code><span class="tag">&lt;button</span> <span class="attr">id</span>=<span class="val">"btn"</span><span class="tag">&gt;</span>Click Me<span class="tag">&lt;/button&gt;</span>
+
+<span class="tag">&lt;script&gt;</span>
+<span class="kw">const</span> btn = document.<span class="func">getElementById</span>(<span class="str">"btn"</span>);
+btn.<span class="func">addEventListener</span>(<span class="str">"click"</span>, <span class="kw">function</span>(<span class="val">event</span>) {
+  <span class="func">console</span>.<span class="func">log</span>(<span class="str">"Clicked!"</span>);
+  event.<span class="func">preventDefault</span>();
+});
+<span class="tag">&lt;/script&gt;</span></code>
+          </div>
+
+          <h4>Common Button Events:</h4>
+          <table>
+            <thead><tr><th>Event</th><th>Description</th></tr></thead>
+            <tbody>
+              <tr><td><span class="highlight">onclick</span></td><td>Fired when button is clicked</td></tr>
+              <tr><td><span class="highlight">onmousedown</span></td><td>Fired when mouse button is pressed</td></tr>
+              <tr><td><span class="highlight">onmouseup</span></td><td>Fired when mouse button is released</td></tr>
+              <tr><td><span class="highlight">onmouseover</span></td><td>Fired when mouse hovers over button</td></tr>
+              <tr><td><span class="highlight">onmouseout</span></td><td>Fired when mouse leaves the button</td></tr>
+              <tr><td><span class="highlight">onfocus</span></td><td>Fired when button gains focus</td></tr>
+            </tbody>
+          </table>
+
+          <div class="info-box">
+            <p><strong>addEventListener is the recommended approach</strong> because it allows multiple event handlers on the same element, supports event capturing/bubbling, and separates JavaScript from HTML (better code organization).</p>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- Q17 -->
+    <div class="question-card" id="q17">
+      <div class="question-header" onclick="toggleQuestion(this)">
+        <div class="question-number">17</div>
+        <div>
+          <div class="question-title">With example explain how you move an element in JavaScript.</div>
+          <span class="marks-badge">5 Marks</span>
+        </div>
+        <div class="question-toggle">
+          <svg viewBox="0 0 24 24" fill="none" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="6 9 12 15 18 9"/></svg>
+        </div>
+      </div>
+      <div class="question-body">
+        <div class="answer-content">
+          <h4>✅ Detailed Answer</h4>
+          <p>Moving elements in JavaScript can be done by changing their <span class="highlight">position</span>, <span class="highlight">margin</span>, <span class="highlight">transform</span>, or by manipulating the <span class="highlight">DOM</span> (appending/moving elements).</p>
+
+          <h4>Method 1: Using CSS position properties</h4>
+          <div class="code-block">
+            <span class="code-label">HTML + JavaScript</span>
+            <code><span class="tag">&lt;div</span> <span class="attr">id</span>=<span class="val">"box"</span> <span class="attr">style</span>=<span class="val">"position: absolute; width: 100px; height: 100px; 
+       background: red; left: 0px; top: 0px;"</span><span class="tag">&gt;&lt;/div&gt;</span>
+<span class="tag">&lt;button</span> <span class="attr">onclick</span>=<span class="val">"moveRight()"</span><span class="tag">&gt;</span>Move Right<span class="tag">&lt;/button&gt;</span>
+
+<span class="tag">&lt;script&gt;</span>
+<span class="kw">let</span> pos = <span class="num">0</span>;
+<span class="kw">function</span> <span class="func">moveRight</span>() {
+  <span class="kw">const</span> box = document.<span class="func">getElementById</span>(<span class="str">"box"</span>);
+  pos = pos + <span class="num">50</span>;
+  box.style.<span class="prop">left</span> = pos + <span class="str">"px"</span>;
+}
+<span class="tag">&lt;/script&gt;</span></code>
+          </div>
+
+          <h4>Method 2: Using CSS transform</h4>
+          <div class="code-block">
+            <span class="code-label">JavaScript</span>
+            <code><span class="kw">function</span> <span class="func">moveElement</span>() {
+  <span class="kw">const</span> elem = document.<span class="func">getElementById</span>(<span class="str">"myElement"</span>);
+  elem.style.<span class="prop">transform</span> = <span class="str">"translateX(200px) translateY(100px)"</span>;
+}</code>
+          </div>
+
+          <h4>Method 3: Smooth animation with setInterval</h4>
+          <div class="code-block">
+            <span class="code-label">JavaScript</span>
+            <code><span class="kw">function</span> <span class="func">animateMove</span>() {
+  <span class="kw">const</span> box = document.<span class="func">getElementById</span>(<span class="str">"box"</span>);
+  <span class="kw">let</span> leftPos = <span class="num">0</span>;
+  <span class="kw">const</span> id = <span class="func">setInterval</span>(<span class="kw">function</span>() {
+    <span class="kw">if</span> (leftPos >= <span class="num">300</span>) {
+      <span class="func">clearInterval</span>(id);
+    } <span class="kw">else</span> {
+      leftPos++;
+      box.style.<span class="prop">left</span> = leftPos + <span class="str">"px"</span>;
+    }
+  }, <span class="num">5</span>);
+}</code>
+          </div>
+
+          <h4>Method 4: Moving DOM elements (reordering)</h4>
+          <div class="code-block">
+            <span class="code-label">JavaScript</span>
+            <code><span class="cm">// Move an element from one parent to another</span>
+<span class="kw">const</span> element = document.<span class="func">getElementById</span>(<span class="str">"myDiv"</span>);
+document.<span class="func">getElementById</span>(<span class="str">"newParent"</span>).<span class="func">appendChild</span>(element);
+
+<span class="cm">// Move before a specific sibling</span>
+<span class="kw">const</span> sibling = document.<span class="func">getElementById</span>(<span class="str">"sibling"</span>);
+sibling.parentNode.<span class="func">insertBefore</span>(element, sibling);</code>
+          </div>
+        </div>
+      </div>
+    </div>
+
+  </div>
+</section>
+
+<!-- ==================== SECTION C ==================== -->
+<section class="section" id="section-c">
+  <div class="section-header">
+    <div class="section-tag"><span class="line"></span> Section C <span class="line"></span></div>
+    <h2>Long Answer Questions</h2>
+    <p>Answer any <strong>2 questions</strong>. Each question carries <strong>10 marks</strong>. (2 × 10 = 20)</p>
+  </div>
+
+  <div class="questions-grid section-c">
+
+    <!-- Q18 -->
+    <div class="question-card" id="q18">
+      <div class="question-header" onclick="toggleQuestion(this)">
+        <div class="question-number">18</div>
+        <div>
+          <div class="question-title">Explain &lt;table&gt; tag with example in HTML.</div>
+          <span class="marks-badge">10 Marks</span>
+        </div>
+        <div class="question-toggle">
+          <svg viewBox="0 0 24 24" fill="none" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="6 9 12 15 18 9"/></svg>
+        </div>
+      </div>
+      <div class="question-body">
+        <div class="answer-content">
+          <h4>✅ Detailed Answer</h4>
+          <p>The <span class="highlight">&lt;table&gt;</span> tag in HTML is used to create tables for displaying tabular data (rows and columns). It consists of several sub-elements that define the table structure.</p>
+
+          <h4>Table Elements:</h4>
+          <table>
+            <thead>
+              <tr><th>Tag</th><th>Purpose</th></tr>
+            </thead>
+            <tbody>
+              <tr><td><span class="highlight">&lt;table&gt;</span></td><td>Defines the table container</td></tr>
+              <tr><td><span class="highlight">&lt;caption&gt;</span></td><td>Defines a table caption/title</td></tr>
+              <tr><td><span class="highlight">&lt;thead&gt;</span></td><td>Groups the header content</td></tr>
+              <tr><td><span class="highlight">&lt;tbody&gt;</span></td><td>Groups the body content</td></tr>
+              <tr><td><span class="highlight">&lt;tfoot&gt;</span></td><td>Groups the footer content</td></tr>
+              <tr><td><span class="highlight">&lt;tr&gt;</span></td><td>Defines a table row</td></tr>
+              <tr><td><span class="highlight">&lt;th&gt;</span></td><td>Defines a header cell (bold & centered)</td></tr>
+              <tr><td><span class="highlight">&lt;td&gt;</span></td><td>Defines a standard data cell</td></tr>
+              <tr><td><span class="highlight">&lt;colgroup&gt;</span></td><td>Groups columns for styling</td></tr>
+              <tr><td><span class="highlight">&lt;col&gt;</span></td><td>Specifies column properties</td></tr>
+            </tbody>
+          </table>
+
+          <h4>Complete Example:</h4>
+          <div class="code-block">
+            <span class="code-label">HTML</span>
+            <code><span class="tag">&lt;!DOCTYPE html&gt;</span>
+<span class="tag">&lt;html</span> <span class="attr">lang</span>=<span class="val">"en"</span><span class="tag">&gt;</span>
+<span class="tag">&lt;head&gt;</span>
+  <span class="tag">&lt;title&gt;</span>Student Marks Table<span class="tag">&lt;/title&gt;</span>
+  <span class="tag">&lt;style&gt;</span>
+    <span class="sel">table</span> {
+      <span class="prop">border-collapse</span>: <span class="val">collapse</span>;
+      <span class="prop">width</span>: <span class="num">100%</span>;
+      <span class="prop">margin</span>: <span class="num">20px</span> <span class="num">0</span>;
+      <span class="prop">font-family</span>: <span class="val">Arial</span>, <span class="val">sans-serif</span>;
+    }
+    <span class="sel">th, td</span> {
+      <span class="prop">border</span>: <span class="num">1px</span> <span class="val">solid</span> <span class="val">#ddd</span>;
+      <span class="prop">padding</span>: <span class="num">12px</span>;
+      <span class="prop">text-align</span>: <span class="val">center</span>;
+    }
+    <span class="sel">th</span> {
+      <span class="prop">background-color</span>: <span class="val">#4CAF50</span>;
+      <span class="prop">color</span>: <span class="val">white</span>;
+    }
+    <span class="sel">tr:nth-child(even)</span> {
+      <span class="prop">background-color</span>: <span class="val">#f2f2f2</span>;
+    }
+    <span class="sel">tfoot</span> {
+      <span class="prop">background-color</span>: <span class="val">#ddd</span>;
+      <span class="prop">font-weight</span>: <span class="val">bold</span>;
+    }
+  <span class="tag">&lt;/style&gt;</span>
+<span class="tag">&lt;/head&gt;</span>
+<span class="tag">&lt;body&gt;</span>
+
+  <span class="tag">&lt;h2&gt;</span>Student Marks Report<span class="tag">&lt;/h2&gt;</span>
+
+  <span class="tag">&lt;table&gt;</span>
+    <span class="tag">&lt;caption&gt;</span>Class X - Final Examination Results<span class="tag">&lt;/caption&gt;</span>
+    
+    <span class="tag">&lt;thead&gt;</span>
+      <span class="tag">&lt;tr&gt;</span>
+        <span class="tag">&lt;th&gt;</span>Roll No<span class="tag">&lt;/th&gt;</span>
+        <span class="tag">&lt;th&gt;</span>Name<span class="tag">&lt;/th&gt;</span>
+        <span class="tag">&lt;th&gt;</span>Math<span class="tag">&lt;/th&gt;</span>
+        <span class="tag">&lt;th&gt;</span>Science<span class="tag">&lt;/th&gt;</span>
+        <span class="tag">&lt;th&gt;</span>English<span class="tag">&lt;/th&gt;</span>
+        <span class="tag">&lt;th&gt;</span>Total<span class="tag">&lt;/th&gt;</span>
+      <span class="tag">&lt;/tr&gt;</span>
+    <span class="tag">&lt;/thead&gt;</span>
+
+    <span class="tag">&lt;tbody&gt;</span>
+      <span class="tag">&lt;tr&gt;</span>
+        <span class="tag">&lt;td&gt;</span>101<span class="tag">&lt;/td&gt;</span>
+        <span class="tag">&lt;td&gt;</span>Arun Kumar<span class="tag">&lt;/td&gt;</span>
+        <span class="tag">&lt;td&gt;</span>95<span class="tag">&lt;/td&gt;</span>
+        <span class="tag">&lt;td&gt;</span>88<span class="tag">&lt;/td&gt;</span>
+        <span class="tag">&lt;td&gt;</span>92<span class="tag">&lt;/td&gt;</span>
+        <span class="tag">&lt;td&gt;</span>275<span class="tag">&lt;/td&gt;</span>
+      <span class="tag">&lt;/tr&gt;</span>
+      <span class="tag">&lt;tr&gt;</span>
+        <span class="tag">&lt;td&gt;</span>102<span class="tag">&lt;/td&gt;</span>
+        <span class="tag">&lt;td&gt;</span>Priya Singh<span class="tag">&lt;/td&gt;</span>
+        <span class="tag">&lt;td&gt;</span>85<span class="tag">&lt;/td&gt;</span>
+        <span class="tag">&lt;td&gt;</span>90<span class="tag">&lt;/td&gt;</span>
+        <span class="tag">&lt;td&gt;</span>88<span class="tag">&lt;/td&gt;</span>
+        <span class="tag">&lt;td&gt;</span>263<span class="tag">&lt;/td&gt;</span>
+      <span class="tag">&lt;/tr&gt;</span>
+      <span class="tag">&lt;tr&gt;</span>
+        <span class="tag">&lt;td&gt;</span>103<span class="tag">&lt;/td&gt;</span>
+        <span class="tag">&lt;td&gt;</span>Rahul Sharma<span class="tag">&lt;/td&gt;</span>
+        <span class="tag">&lt;td&gt;</span>78<span class="tag">&lt;/td&gt;</span>
+        <span class="tag">&lt;td&gt;</span>82<span class="tag">&lt;/td&gt;</span>
+        <span class="tag">&lt;td&gt;</span>85<span class="tag">&lt;/td&gt;</span>
+        <span class="tag">&lt;td&gt;</span>245<span class="tag">&lt;/td&gt;</span>
+      <span class="tag">&lt;/tr&gt;</span>
+    <span class="tag">&lt;/tbody&gt;</span>
+
+    <span class="tag">&lt;tfoot&gt;</span>
+      <span class="tag">&lt;tr&gt;</span>
+        <span class="tag">&lt;td</span> <span class="attr">colspan</span>=<span class="val">"5"</span><span class="tag">&gt;</span>Average<span class="tag">&lt;/td&gt;</span>
+        <span class="tag">&lt;td&gt;</span>261<span class="tag">&lt;/td&gt;</span>
+      <span class="tag">&lt;/tr&gt;</span>
+    <span class="tag">&lt;/tfoot&gt;</span>
+  <span class="tag">&lt;/table&gt;</span>
+
+<span class="tag">&lt;/body&gt;</span>
+<span class="tag">&lt;/html&gt;</span></code>
+          </div>
+
+          <h4>Key Table Attributes:</h4>
+          <ul>
+            <li><span class="highlight">border</span> — Specifies border width (deprecated in HTML5, use CSS)</li>
+            <li><span class="highlight">cellpadding</span> — Space between cell content and border (use CSS padding)</li>
+            <li><span class="highlight">cellspacing</span> — Space between cells (use CSS border-spacing)</li>
+            <li><span class="highlight">colspan</span> — Spans a cell across multiple columns</li>
+            <li><span class="highlight">rowspan</span> — Spans a cell across multiple rows</li>
+          </ul>
+        </div>
+      </div>
+    </div>
+
+    <!-- Q19 -->
+    <div class="question-card" id="q19">
+      <div class="question-header" onclick="toggleQuestion(this)">
+        <div class="question-number">19</div>
+        <div>
+          <div class="question-title">
+            a) Discuss font properties and list properties in CSS.<br>
+            b) Explain some commonly used built-in functions in JavaScript.
+          </div>
+          <span class="marks-badge">10 Marks</span>
+        </div>
+        <div class="question-toggle">
+          <svg viewBox="0 0 24 24" fill="none" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="6 9 12 15 18 9"/></svg>
+        </div>
+      </div>
+      <div class="question-body">
+        <div class="answer-content">
+          <div class="sub-questions">
+            <div class="sub-q">
+              <strong>a) Font Properties and List Properties in CSS</strong>
+            </div>
+          </div>
+
+          <h4>Font Properties in CSS:</h4>
+          <p>CSS provides comprehensive control over text appearance through font properties:</p>
+
+          <table>
+            <thead>
+              <tr><th>Property</th><th>Description</th><th>Example</th></tr>
+            </thead>
+            <tbody>
+              <tr>
+                <td><span class="highlight">font-family</span></td>
+                <td>Specifies the font type</td>
+                <td><code>font-family: Arial, sans-serif;</code></td>
+              </tr>
+              <tr>
+                <td><span class="highlight">font-size</span></td>
+                <td>Specifies the font size</td>
+                <td><code>font-size: 16px;</code></td>
+              </tr>
+              <tr>
+                <td><span class="highlight">font-weight</span></td>
+                <td>Specifies font thickness</td>
+                <td><code>font-weight: bold;</code> (100-900)</td>
+              </tr>
+              <tr>
+                <td><span class="highlight">font-style</span></td>
+                <td>Specifies italic/oblique/normal</td>
+                <td><code>font-style: italic;</code></td>
+              </tr>
+              <tr>
+                <td><span class="highlight">font-variant</span></td>
+                <td>Small caps or normal</td>
+                <td><code>font-variant: small-caps;</code></td>
+              </tr>
+              <tr>
+                <td><span class="highlight">line-height</span></td>
+                <td>Sets the height of a line</td>
+                <td><code>line-height: 1.6;</code></td>
+              </tr>
+              <tr>
+                <td><span class="highlight">letter-spacing</span></td>
+                <td>Sets spacing between characters</td>
+                <td><code>letter-spacing: 2px;</code></td>
+              </tr>
+              <tr>
+                <td><span class="highlight">word-spacing</span></td>
+                <td>Sets spacing between words</td>
+                <td><code>word-spacing: 4px;</code></td>
+              </tr>
+              <tr>
+                <td><span class="highlight">text-align</span></td>
+                <td>Aligns text (left/right/center/justify)</td>
+                <td><code>text-align: center;</code></td>
+              </tr>
+              <tr>
+                <td><span class="highlight">text-decoration</span></td>
+                <td>Underline, overline, line-through, none</td>
+                <td><code>text-decoration: underline;</code></td>
+              </tr>
+              <tr>
+                <td><span class="highlight">text-transform</span></td>
+                <td>Uppercase, lowercase, capitalize</td>
+                <td><code>text-transform: uppercase;</code></td>
+              </tr>
+            </tbody>
+          </table>
+
+          <div class="code-block">
+            <span class="code-label">CSS</span>
+            <code><span class="sel">.heading</span> {
+  <span class="prop">font-family</span>: <span class="val">'Playfair Display'</span>, <span class="val">serif</span>;
+  <span class="prop">font-size</span>: <span class="num">2.5rem</span>;
+  <span class="prop">font-weight</span>: <span class="num">800</span>;
+  <span class="prop">font-style</span>: <span class="val">italic</span>;
+  <span class="prop">color</span>: <span class="val">#6366f1</span>;
+  <span class="prop">letter-spacing</span>: <span class="num">2px</span>;
+  <span class="prop">text-transform</span>: <span class="val">uppercase</span>;
+  <span class="prop">text-shadow</span>: <span class="num">2px</span> <span class="num">2px</span> <span class="num">4px</span> <span class="val">rgba(0,0,0,0.2)</span>;
+}</code>
+          </div>
+
+          <h4>List Properties in CSS:</h4>
+          <table>
+            <thead>
+              <tr><th>Property</th><th>Description</th><th>Example</th></tr>
+            </thead>
+            <tbody>
+              <tr>
+                <td><span class="highlight">list-style-type</span></td>
+                <td>Specifies marker type</td>
+                <td><code>disc, circle, square, decimal, lower-alpha, upper-roman, none</code></td>
+              </tr>
+              <tr>
+                <td><span class="highlight">list-style-image</span></td>
+                <td>Sets a custom image as marker</td>
+                <td><code>list-style-image: url('icon.png');</code></td>
+              </tr>
+              <tr>
+                <td><span class="highlight">list-style-position</span></td>
+                <td>Position of marker (inside/outside)</td>
+                <td><code>list-style-position: inside;</code></td>
+              </tr>
+              <tr>
+                <td><span class="highlight">list-style</span></td>
+                <td>Shorthand for all list properties</td>
+                <td><code>list-style: square inside;</code></td>
+              </tr>
+            </tbody>
+          </table>
+
+          <div class="code-block">
+            <span class="code-label">CSS</span>
+            <code><span class="sel">ul</span> {
+  <span class="prop">list-style-type</span>: <span class="val">none</span>;
+  <span class="prop">padding</span>: <span class="num">0</span>;
+}
+
+<span class="sel">ul li</span>::<span class="prop">before</span> {
+  <span class="prop">content</span>: <span class="str">" "</span>;
+  <span class="prop">color</span>: <span class="val">#6366f1</span>;
+  <span class="prop">font-weight</span>: <span class="val">bold</span>;
+}
+
+<span class="sel">ol</span> {
+  <span class="prop">list-style-type</span>: <span class="val">upper-roman</span>;
+  <span class="prop">list-style-position</span>: <span class="val">outside</span>;
+}</code>
+          </div>
+
+          <hr style="border-color: var(--border); margin: 2rem 0;">
+
+          <div class="sub-questions">
+            <div class="sub-q">
+              <strong>b) Commonly Used Built-in Functions in JavaScript</strong>
+            </div>
+          </div>
+
+          <h4>1. Input/Output Functions:</h4>
+          <div class="code-block">
+            <span class="code-label">JavaScript</span>
+            <code><span class="func">alert</span>(<span class="str">"Message"</span>);              <span class="cm">// Displays alert dialog</span>
+<span class="func">confirm</span>(<span class="str">"Are you sure?"</span>);    <span class="cm">// OK/Cancel dialog, returns boolean</span>
+<span class="func">prompt</span>(<span class="str">"Enter name:"</span>);     <span class="cm">// Input dialog, returns string</span>
+document.<span class="func">write</span>(<span class="str">"Text"</span>);     <span class="cm">// Writes to HTML document</span>
+console.<span class="func">log</span>(<span class="str">"Debug"</span>);       <span class="cm">// Logs to browser console</span></code>
+          </div>
+
+          <h4>2. String Functions:</h4>
+          <div class="code-block">
+            <span class="code-label">JavaScript</span>
+            <code><span class="kw">let</span> str = <span class="str">"Hello World"</span>;
+str.<span class="func">length</span>;                   <span class="cm">// 11</span>
+str.<span class="func">toUpperCase</span>();             <span class="cm">// "HELLO WORLD"</span>
+str.<span class="func">toLowerCase</span>();             <span class="cm">// "hello world"</span>
+str.<span class="func">substring</span>(<span class="num">0</span>, <span class="num">5</span>);           <span class="cm">// "Hello"</span>
+str.<span class="func">split</span>(<span class="str">" "</span>);               <span class="cm">// ["Hello", "World"]</span>
+str.<span class="func">trim</span>();                    <span class="cm">// Removes whitespace</span>
+str.<span class="func">includes</span>(<span class="str">"World"</span>);         <span class="cm">// true</span>
+str.<span class="func">replace</span>(<span class="str">"World"</span>, <span class="str">"JS"</span>);   <span class="cm">// "Hello JS"</span></code>
+          </div>
+
+          <h4>3. Math Functions:</h4>
+          <div class="code-block">
+            <span class="code-label">JavaScript</span>
+            <code><span class="kw">Math</span>.<span class="func">max</span>(<span class="num">5</span>, <span class="num">10</span>, <span class="num">3</span>);      <span class="cm">// 10</span>
+<span class="kw">Math</span>.<span class="func">min</span>(<span class="num">5</span>, <span class="num">10</span>, <span class="num">3</span>);      <span class="cm">// 3</span>
+<span class="kw">Math</span>.<span class="func">round</span>(<span class="num">4.7</span>);           <span class="cm">// 5</span>
+<span class="kw">Math</span>.<span class="func">ceil</span>(<span class="num">4.2</span>);            <span class="cm">// 5</span>
+<span class="kw">Math</span>.<span class="func">floor</span>(<span class="num">4.9</span>);           <span class="cm">// 4</span>
+<span class="kw">Math</span>.<span class="func">random</span>();              <span class="cm">// 0.0 to 1.0</span>
+<span class="kw">Math</span>.<span class="func">sqrt</span>(<span class="num">16</span>);             <span class="cm">// 4</span>
+<span class="kw">Math</span>.<span class="func">pow</span>(<span class="num">2</span>, <span class="num">3</span>);             <span class="cm">// 8</span>
+<span class="kw">Math</span>.<span class="func">abs</span>(-<span class="num">10</span>);             <span class="cm">// 10</span></code>
+          </div>
+
+          <h4>4. Array Functions:</h4>
+          <div class="code-block">
+            <span class="code-label">JavaScript</span>
+            <code><span class="kw">let</span> arr = [<span class="num">1</span>, <span class="num">2</span>, <span class="num">3</span>, <span class="num">4</span>, <span class="num">5</span>];
+arr.<span class="func">push</span>(<span class="num">6</span>);                <span class="cm">// Add to end</span>
+arr.<span class="func">pop</span>();                   <span class="cm">// Remove from end</span>
+arr.<span class="func">shift</span>();                 <span class="cm">// Remove from start</span>
+arr.<span class="func">unshift</span>(<span class="num">0</span>);             <span class="cm">// Add to start</span>
+arr.<span class="func">sort</span>();                  <span class="cm">// Sort elements</span>
+arr.<span class="func">reverse</span>();               <span class="cm">// Reverse order</span>
+arr.<span class="func">join</span>(<span class="str">", "</span>);              <span class="cm">// "1, 2, 3, 4, 5"</span>
+arr.<span class="func">slice</span>(<span class="num">1</span>, <span class="num">3</span>);             <span class="cm">// [2, 3]</span>
+arr.<span class="func">map</span>(x => x * <span class="num">2</span>);        <span class="cm">// [2, 4, 6, 8, 10]</span>
+arr.<span class="func">filter</span>(x => x > <span class="num">3</span>);      <span class="cm">// [4, 5]</span></code>
+          </div>
+
+          <h4>5. Type Conversion Functions:</h4>
+          <div class="code-block">
+            <span class="code-label">JavaScript</span>
+            <code><span class="func">parseInt</span>(<span class="str">"42"</span>);           <span class="cm">// 42</span>
+<span class="func">parseFloat</span>(<span class="str">"3.14"</span>);       <span class="cm">// 3.14</span>
+<span class="func">Number</span>(<span class="str">"100"</span>);            <span class="cm">// 100</span>
+<span class="func">String</span>(<span class="num">42</span>);               <span class="cm">// "42"</span>
+<span class="func">Boolean</span>(<span class="num">1</span>);               <span class="cm">// true</span></code>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- Q20 -->
+    <div class="question-card" id="q20">
+      <div class="question-header" onclick="toggleQuestion(this)">
+        <div class="question-number">20</div>
+        <div>
+          <div class="question-title">
+            a) What is navigator object? Discuss the properties and methods of JavaScript navigation object.<br>
+            b) Explain how you drag and drop an Element in JavaScript with an example.
+          </div>
+          <span class="marks-badge">10 Marks</span>
+        </div>
+        <div class="question-toggle">
+          <svg viewBox="0 0 24 24" fill="none" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="6 9 12 15 18 9"/></svg>
+        </div>
+      </div>
+      <div class="question-body">
+        <div class="answer-content">
+          <div class="sub-questions">
+            <div class="sub-q">
+              <strong>a) Navigator Object — Properties and Methods</strong>
+            </div>
+          </div>
+
+          <h4>What is the Navigator Object?</h4>
+          <p>The <span class="highlight">navigator</span> object is a built-in JavaScript object that provides information about the browser and the user's system. It is part of the <span class="highlight">window</span> object and can be accessed as <span class="highlight">window.navigator</span> or simply <span class="highlight">navigator</span>.</p>
+
+          <h4>Properties of Navigator Object:</h4>
+          <table>
+            <thead>
+              <tr><th>Property</th><th>Description</th><th>Example Value</th></tr>
+            </thead>
+            <tbody>
+              <tr><td><span class="highlight">appName</span></td><td>Name of the browser</td><td>"Netscape"</td></tr>
+              <tr><td><span class="highlight">appVersion</span></td><td>Version information of the browser</td><td>"5.0 (Windows)"</td></tr>
+              <tr><td><span class="highlight">platform</span></td><td>Operating system platform</td><td>"Win32", "MacIntel"</td></tr>
+              <tr><td><span class="highlight">userAgent</span></td><td>Complete user agent string</td><td>Full UA string</td></tr>
+              <tr><td><span class="highlight">language</span></td><td>Browser's language</td><td>"en-US"</td></tr>
+              <tr><td><span class="highlight">cookieEnabled</span></td><td>Whether cookies are enabled</td><td>true / false</td></tr>
+              <tr><td><span class="highlight">onLine</span></td><td>Whether browser is online</td><td>true / false</td></tr>
+              <tr><td><span class="highlight">vendor</span></td><td>Browser vendor name</td><td>"Google Inc."</td></tr>
+              <tr><td><span class="highlight">javaEnabled()</span></td><td>Checks if Java is enabled</td><td>true / false</td></tr>
+            </tbody>
+          </table>
+
+          <div class="code-block">
+            <span class="code-label">JavaScript</span>
+            <code><span class="cm">// Displaying navigator properties</span>
+document.<span class="func">write</span>(<span class="str">"&lt;h2&gt;Browser Information&lt;/h2&gt;"</span>);
+document.<span class="func">write</span>(<span class="str">"Browser: "</span> + navigator.<span class="prop">appName</span> + <span class="str">"&lt;br&gt;"</span>);
+document.<span class="func">write</span>(<span class="str">"Platform: "</span> + navigator.<span class="prop">platform</span> + <span class="str">"&lt;br&gt;"</span>);
+document.<span class="func">write</span>(<span class="str">"Language: "</span> + navigator.<span class="prop">language</span> + <span class="str">"&lt;br&gt;"</span>);
+document.<span class="func">write</span>(<span class="str">"Cookies Enabled: "</span> + navigator.<span class="prop">cookieEnabled</span> + <span class="str">"&lt;br&gt;"</span>);
+document.<span class="func">write</span>(<span class="str">"Online: "</span> + navigator.<span class="prop">onLine</span> + <span class="str">"&lt;br&gt;"</span>);
+document.<span class="func">write</span>(<span class="str">"User Agent: "</span> + navigator.<span class="prop">userAgent</span>);</code>
+          </div>
+
+          <hr style="border-color: var(--border); margin: 2rem 0;">
+
+          <div class="sub-questions">
+            <div class="sub-q">
+              <strong>b) Drag and Drop Elements in JavaScript</strong>
+            </div>
+          </div>
+
+          <h4>How Drag and Drop Works:</h4>
+          <p>HTML5 Drag and Drop API allows users to drag elements and drop them into target areas. It involves several events:</p>
+
+          <table>
+            <thead>
+              <tr><th>Event</th><th>Applies To</th><th>Description</th></tr>
+            </thead>
+            <tbody>
+              <tr><td><span class="highlight">dragstart</span></td><td>Draggable element</td><td>Fired when dragging starts</td></tr>
+              <tr><td><span class="highlight">drag</span></td><td>Draggable element</td><td>Fired continuously while dragging</td></tr>
+              <tr><td><span class="highlight">dragend</span></td><td>Draggable element</td><td>Fired when dragging stops</td></tr>
+              <tr><td><span class="highlight">dragover</span></td><td>Drop target</td><td>Fired when dragged over target</td></tr>
+              <tr><td><span class="highlight">dragenter</span></td><td>Drop target</td><td>Fired when entering target</td></tr>
+              <tr><td><span class="highlight">dragleave</span></td><td>Drop target</td><td>Fired when leaving target</td></tr>
+              <tr><td><span class="highlight">drop</span></td><td>Drop target</td><td>Fired when element is dropped</td></tr>
+            </tbody>
+          </table>
+
+          <h4>Complete Drag & Drop Example:</h4>
+          <div class="code-block">
+            <span class="code-label">HTML + JavaScript</span>
+            <code><span class="tag">&lt;!DOCTYPE html&gt;</span>
+<span class="tag">&lt;html</span> <span class="attr">lang</span>=<span class="val">"en"</span><span class="tag">&gt;</span>
+<span class="tag">&lt;head&gt;</span>
+  <span class="tag">&lt;title&gt;</span>Drag and Drop Example<span class="tag">&lt;/title&gt;</span>
+  <span class="tag">&lt;style&gt;</span>
+    <span class="sel">#dragBox</span> {
+      <span class="prop">width</span>: <span class="num">120px</span>;
+      <span class="prop">height</span>: <span class="num">120px</span>;
+      <span class="prop">background</span>: <span class="val">#6366f1</span>;
+      <span class="prop">color</span>: <span class="val">white</span>;
+      <span class="prop">display</span>: <span class="val">flex</span>;
+      <span class="prop">align-items</span>: <span class="val">center</span>;
+      <span class="prop">justify-content</span>: <span class="val">center</span>;
+      <span class="prop">cursor</span>: <span class="val">grab</span>;
+      <span class="prop">border-radius</span>: <span class="num">10px</span>;
+      <span class="prop">font-weight</span>: <span class="val">bold</span>;
+    }
+    <span class="sel">#dropZone</span> {
+      <span class="prop">width</span>: <span class="num">300px</span>;
+      <span class="prop">height</span>: <span class="num">200px</span>;
+      <span class="prop">border</span>: <span class="num">3px</span> <span class="val">dashed</span> <span class="val">#ccc</span>;
+      <span class="prop">margin-top</span>: <span class="num">20px</span>;
+      <span class="prop">display</span>: <span class="val">flex</span>;
+      <span class="prop">align-items</span>: <span class="val">center</span>;
+      <span class="prop">justify-content</span>: <span class="val">center</span>;
+      <span class="prop">border-radius</span>: <span class="num">10px</span>;
+      <span class="prop">color</span>: <span class="val">#999</span>;
+    }
+    <span class="sel">#dropZone.hover</span> {
+      <span class="prop">border-color</span>: <span class="val">#6366f1</span>;
+      <span class="prop">background</span>: <span class="val">rgba(99, 102, 241, 0.1)</span>;
+    }
+  <span class="tag">&lt;/style&gt;</span>
+<span class="tag">&lt;/head&gt;</span>
+<span class="tag">&lt;body&gt;</span>
+
+  <span class="tag">&lt;div</span> <span class="attr">id</span>=<span class="val">"dragBox"</span> <span class="attr">draggable</span>=<span class="val">"true"</span><span class="tag">&gt;</span>
+    Drag Me!
+  <span class="tag">&lt;/div&gt;</span>
+
+  <span class="tag">&lt;div</span> <span class="attr">id</span>=<span class="val">"dropZone"</span><span class="tag">&gt;</span>
+    Drop Here
+  <span class="tag">&lt;/div&gt;</span>
+
+  <span class="tag">&lt;script&gt;</span>
+    <span class="kw">const</span> dragBox = document.<span class="func">getElementById</span>(<span class="str">"dragBox"</span>);
+    <span class="kw">const</span> dropZone = document.<span class="func">getElementById</span>(<span class="str">"dropZone"</span>);
+
+    <span class="cm">// Drag events on the draggable element</span>
+    dragBox.<span class="func">addEventListener</span>(<span class="str">"dragstart"</span>, <span class="kw">function</span>(e) {
+      e.dataTransfer.<span class="func">setData</span>(<span class="str">"text/plain"</span>, <span class="str">"dragged"</span>);
+      dragBox.style.<span class="prop">opacity</span> = <span class="str">"0.5"</span>;
+    });
+
+    dragBox.<span class="func">addEventListener</span>(<span class="str">"dragend"</span>, <span class="kw">function</span>() {
+      dragBox.style.<span class="prop">opacity</span> = <span class="str">"1"</span>;
+    });
+
+    <span class="cm">// Drop events on the target</span>
+    dropZone.<span class="func">addEventListener</span>(<span class="str">"dragover"</span>, <span class="kw">function</span>(e) {
+      e.<span class="func">preventDefault</span>(); <span class="cm">// Required to allow dropping</span>
+      dropZone.<span class="prop">classList</span>.<span class="func">add</span>(<span class="str">"hover"</span>);
+    });
+
+    dropZone.<span class="func">addEventListener</span>(<span class="str">"dragleave"</span>, <span class="kw">function</span>() {
+      dropZone.<span class="prop">classList</span>.<span class="func">remove</span>(<span class="str">"hover"</span>);
+    });
+
+    dropZone.<span class="func">addEventListener</span>(<span class="str">"drop"</span>, <span class="kw">function</span>(e) {
+      e.<span class="func">preventDefault</span>();
+      dropZone.<span class="prop">classList</span>.<span class="func">remove</span>(<span class="str">"hover"</span>);
+      dropZone.<span class="prop">innerHTML</span> = <span class="str">"✅ Element Dropped!"</span>;
+      dropZone.<span class="prop">style</span>.<span class="prop">borderColor</span> = <span class="str">"#10b981"</span>;
+      dropZone.<span class="func">appendChild</span>(dragBox);
+    });
+  <span class="tag">&lt;/script&gt;</span>
+
+<span class="tag">&lt;/body&gt;</span>
+<span class="tag">&lt;/html&gt;</span></code>
+          </div>
+
+          <h4>Key Steps for Drag & Drop:</h4>
+          <ol>
+            <li>Set <span class="highlight">draggable="true"</span> on the element to be dragged</li>
+            <li>Handle <span class="highlight">dragstart</span> event to set data using <span class="highlight">dataTransfer.setData()</span></li>
+            <li>Handle <span class="highlight">dragover</span> on the drop target and call <span class="highlight">preventDefault()</span> to allow dropping</li>
+            <li>Handle <span class="highlight">drop</span> event to process the dropped element</li>
+            <li>Use <span class="highlight">dragenter</span> and <span class="highlight">dragleave</span> for visual feedback</li>
+          </ol>
+
+          <div class="info-box">
+            <p><strong>Important:</strong> The <span class="highlight">preventDefault()</span> call in the <span class="highlight">dragover</span> event handler is critical — without it, the browser will not allow the drop operation.</p>
+          </div>
+        </div>
+      </div>
+    </div>
+
+  </div>
+</section>
+
+<!-- Footer -->
+    <footer class="footer">
+         <div class="mt-2">
+            <a href="https://github.com/Sudarshanbadli" aria-label="GitHub"><i class="fab fa-github"></i></a>
+            <a href="https://codepen.io/Sudarshan-Badli" aria-label="Codepen"><i class="fab fa-codepen"></i></a>
+            <a href="https://x.com/sudarshan_badli?t=4rxkwhdm80fYCRGuyv-nSg&s=09" aria-label="Twitter"><i class="fab fa-twitter"></i></a>
+             <a href="https://www.instagram.com/sudarshanbadli_7?igsh=azU0MDVibTB5bWFo" aria-label="Instagram"><i class="fab fa-instagram"></i></a>
+        </div>
+        <p><p>&copy; 2025 Sudarshan Badli. All rights reserved.</p>
+                    <p class="mt-2">Made with ❤️ and <i class="fas fa-code text-white-500"></i></p>
+        
+    </footer>
+
+
+<!-- Scroll to top -->
+<button class="scroll-top" id="scrollTop" onclick="window.scrollTo({top:0,behavior:'smooth'})">
+  <svg viewBox="0 0 24 24" fill="none" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round">
+    <polyline points="18 15 12 9 6 15"/>
+  </svg>
+</button>
+
+<script>
+// Toggle question cards
+function toggleQuestion(header) {
+  const card = header.closest('.question-card');
+  card.classList.toggle('open');
+}
+
+// Mobile menu toggle
+function toggleMenu() {
+  const navLinks = document.getElementById('navLinks');
+  navLinks.classList.toggle('open');
+}
+
+// Navbar scroll effect
+window.addEventListener('scroll', () => {
+  const navbar = document.getElementById('navbar');
+  const scrollTop = document.getElementById('scrollTop');
+  const progressBar = document.getElementById('progressBar');
+  
+  // Navbar shadow
+  if (window.scrollY > 50) {
+    navbar.classList.add('scrolled');
+  } else {
+    navbar.classList.remove('scrolled');
+  }
+  
+  // Scroll to top button
+  if (window.scrollY > 500) {
+    scrollTop.classList.add('visible');
+  } else {
+    scrollTop.classList.remove('visible');
+  }
+  
+  // Progress bar
+  const docHeight = document.documentElement.scrollHeight - window.innerHeight;
+  const scrollPercent = (window.scrollY / docHeight) * 100;
+  progressBar.style.width = scrollPercent + '%';
+});
+
+// Active nav link on scroll
+const sections = document.querySelectorAll('section, .hero');
+const navLinksAll = document.querySelectorAll('.nav-links a');
+
+window.addEventListener('scroll', () => {
+  let current = '';
+  sections.forEach(section => {
+    const sectionTop = section.offsetTop - 100;
+    if (window.scrollY >= sectionTop) {
+      current = section.getAttribute('id');
+    }
+  });
+  
+  navLinksAll.forEach(link => {
+    link.classList.remove('active');
+    if (link.getAttribute('href') === '#' + current) {
+      link.classList.add('active');
+    }
+  });
+});
+
+// Intersection Observer for animations
+const observer = new IntersectionObserver((entries) => {
+  entries.forEach(entry => {
+    if (entry.isIntersecting) {
+      entry.target.style.animationDelay = (entry.target.dataset.delay || 0) + 's';
+      entry.target.style.animationPlayState = 'running';
+    }
+  });
+}, { threshold: 0.1 });
+
+document.querySelectorAll('.question-card').forEach((card, index) => {
+  card.style.animationDelay = (index * 0.05) + 's';
+});
+
+// Close mobile menu on link click
+document.querySelectorAll('.nav-links a').forEach(link => {
+  link.addEventListener('click', () => {
+    document.getElementById('navLinks').classList.remove('open');
+  });
+});
+
+// Open all by default for better UX - or let user click
+// Uncomment below to auto-open all:
+// document.querySelectorAll('.question-card').forEach(c => c.classList.add('open'));
+</script>
+
+</body>
+</html>
+
